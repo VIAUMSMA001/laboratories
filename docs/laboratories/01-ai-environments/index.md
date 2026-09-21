@@ -35,9 +35,18 @@ The structure of this laboratory is as follows:
 !!! info "Grading"
     In order to pass this laboratory, you must obtain at least 8 points out of 20.
 
+!!! important "Screenshot requirement"
+    At the end of **every** exercise (marked with a :camera: **Screenshot** note), you must take a screenshot of your working solution, including its output, and upload it together with your solution, using the exact filename given in that note (e.g. `f1_1.png`, `f2.png`). Solutions missing the required screenshots, or using the wrong filename, will not be accepted.
+
 ## Preparation
 
 Don't forget to follow the assignment submission process described under [GitHub](../../information/github.md) while working on this laboratory.
+
+!!! important "Reviewer"
+    When creating the pull request for this laboratory, assign it to the `balazskvancz` GitHub user.
+
+!!! tip "Jupyter notebook or plain Python files"
+    You may solve the exercises either in a Jupyter notebook or in plain `.py` files, whichever you prefer. Regardless of the format you choose, make sure that **everything** (code, and the required screenshots) is committed and pushed to your solution branch.
 
 ## Setup
 
@@ -437,6 +446,9 @@ def exercise_1_1(n: int) -> Dict[str, float]:
   pass
 ```
 
+!!! note ":camera: Screenshot"
+    Take a screenshot of the output of `exercise_1_1` and upload it together with your solution as `f1_1.png`.
+
 ### Exercise 1.2
 
 - Create a function called `exercise_1_2` that takes no arguments.
@@ -456,6 +468,9 @@ def exercise_1_2():
   # TODO
   pass
 ```
+
+!!! note ":camera: Screenshot"
+    Take a screenshot of the resulting plot produced by `exercise_1_2` and upload it together with your solution as `f1_2.png`.
 
 ### Exercise 1.3
 
@@ -493,6 +508,9 @@ def exercise_1_3():
   # TODO
   pass
 ```
+
+!!! note ":camera: Screenshot"
+    Take a screenshot of the output of `exercise_1_3` and upload it together with your solution as `f1_3.png`.
 
 ## Exercise 2 – Simple Linear Regression
 
@@ -537,6 +555,9 @@ X, y = create_dummy_dataset()
 visualise_dummy_dataset(X, y)
 ```
 
+!!! note ":camera: Screenshot"
+    Take a screenshot of the visualized dataset and upload it together with your solution as `f2_1.png`.
+
 ```python
 import torch
 import torch.nn as nn
@@ -553,6 +574,9 @@ def fit_simple_linear_regression(epochs = 10):
 # TODO: run this after implementing the function.
 fit_simple_linear_regression()
 ```
+
+!!! note ":camera: Screenshot"
+    Take a screenshot of the trained model's training and validation loss plot and upload it together with your solution as `f2_2.png`.
 
 ## Exercise 3 – Multiclass Softmax Classifier
 
@@ -611,6 +635,9 @@ def fit_softmax_classifier(epochs = 100):
 ```python
 fit_softmax_classifier()
 ```
+
+!!! note ":camera: Screenshot"
+    Take a screenshot of the printed test accuracy and the training loss plot, and upload it together with your solution as `f3.png`.
 
 ## Exercise 4 – Handwritten Number Classifier
 
@@ -673,6 +700,9 @@ def fit_mnist_classifier(epochs = 10):
 ```python
 fit_mnist_classifier()
 ```
+
+!!! note ":camera: Screenshot"
+    Take a screenshot of the printed test accuracy and the training loss plot, and upload it together with your solution as `f4.png`.
 
 ## Giving feedback
 
