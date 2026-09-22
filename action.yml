@@ -1,0 +1,5 @@
+name: 'Build MkDocs site'
+description: 'Builds the Material for MkDocs documentation site inside the repository Dockerfile'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
