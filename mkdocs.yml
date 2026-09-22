@@ -3,7 +3,8 @@ site_author: Kvancz Balázs, Domonkos Ádám
 copyright: Copyright &copy; BME VIK AUT
 repo_name: viaumsma001/laboratories
 repo_url: https://github.com/VIAUMSMA001/laboratories
-# site_url: https://bmeviaumb11.github.io/skalazhato/
+edit_uri: edit/main/docs/
+site_url: https://viaumsma001.github.io/laboratories/
 
 theme:
   name: material
@@ -92,8 +93,8 @@ plugins:
       # not a vanilla yaml syntax, only works with mkdocs.yaml because of pyyaml_env_tag
       enabled: !ENV [IsAuthorsPluginEnabled, false]
       github_token: !ENV [GITHUB_TOKEN, '']
-      repository: bmeviaumb11/skalazhato
-      branch: master
+      repository: VIAUMSMA001/laboratories
+      branch: main
 
 nav:
   - index.md
