@@ -1,0 +1,45 @@
+# MLOps lab v2 frontend — fully pinned dependencies (every package, including indirect ones).
+# Generated with `uv lock` + `uv export` together with the other MLOps requirements file, so both can be
+# installed into the same environment; verified to have binary wheels for Windows x64, Linux x64/arm64
+# and macOS (Apple Silicon and Intel) on Python 3.11-3.14.
+# Windows on ARM is not supported natively: install the x64 build of Python.
+# Install with:  pip install -r <this file>
+
+altair==6.3.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+anyio==4.15.1 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+attrs==26.1.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+certifi==2026.7.22 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+charset-normalizer==3.5.1 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+click==8.5.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+h11==0.16.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+httptools==0.8.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+idna==3.20 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+itsdangerous==2.2.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+jinja2==3.1.6 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+jsonschema==4.26.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+jsonschema-specifications==2025.9.1 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+markupsafe==3.0.3 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+narwhals==2.26.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+numpy==2.4.6 ; (python_full_version < '3.12' and platform_machine == 'AMD64' and sys_platform == 'win32') or (python_full_version < '3.12' and sys_platform == 'darwin') or (python_full_version < '3.12' and sys_platform == 'linux')
+numpy==2.5.3 ; (python_full_version >= '3.12' and platform_machine == 'AMD64' and sys_platform == 'win32') or (python_full_version >= '3.12' and sys_platform == 'darwin') or (python_full_version >= '3.12' and sys_platform == 'linux')
+packaging==26.3 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+pandas==3.0.6 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+pillow==12.3.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+protobuf==7.36.2 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+pyarrow==25.0.1 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+pydeck==0.9.3 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+python-dateutil==2.9.0.post0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+python-multipart==0.0.32 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+referencing==0.37.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+requests==2.34.2 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+rpds-py==2026.6.3 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+six==1.17.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+starlette==1.7.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+streamlit==1.64.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+toml==0.10.2 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+typing-extensions==4.16.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+tzdata==2026.4 ; platform_machine == 'AMD64' and sys_platform == 'win32'
+urllib3==2.8.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+uvicorn==0.54.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
+watchdog==6.0.0 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'linux'
+websockets==16.1.1 ; (platform_machine == 'AMD64' and sys_platform == 'win32') or sys_platform == 'darwin' or sys_platform == 'linux'
