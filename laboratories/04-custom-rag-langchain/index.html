@@ -619,7 +619,7 @@
   <span class="md-ellipsis">
     
   
-    03 - Integrating a Kocal LLM Into a Python Application
+    03 - Integrating a Local LLM Into a Python Application
   
 
     
@@ -649,6 +649,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Building your own RAG pipeline with LangChain
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -665,6 +683,402 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ollama
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-0-dataset-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 0 – Dataset Preparation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 0 – Dataset Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-the-dataset-from-hugging-face" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Download the Dataset from Hugging Face
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-load-the-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Load the Dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-convert-to-document-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Convert to Document Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-vector-databases-faiss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1 – Vector Databases &amp; FAISS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1 – Vector Databases &amp; FAISS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-11-load-embedding-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.1 – Load Embedding Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-12-create-sample-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.2 – Create Sample Embeddings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-13-compute-similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.3 – Compute Similarity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-14-build-faiss-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.4 – Build FAISS Index
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-15-search-with-faiss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.5 – Search with FAISS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-building-rag-from-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2 – Building RAG from Scratch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2 – Building RAG from Scratch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-21-document-chunking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.1 – Document Chunking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-22-process-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.2 – Process Documents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-23-create-embeddings-build-a-cosine-similarity-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.3 – Create Embeddings &amp; Build a Cosine-Similarity Index
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-24-implement-retrieval-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.4 – Implement Retrieval Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-25-build-complete-rag-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.5 – Build Complete RAG Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-langchain-advanced-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3 – LangChain &amp; Advanced Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3 – LangChain &amp; Advanced Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-31-langchain-document-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.1 – LangChain Document Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-32-langchain-vector-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.2 – LangChain Vector Store
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-33-rag-chain-with-lcel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.3 – RAG Chain with LCEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-34-conversational-agentic-rag-with-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.4 – Conversational Agentic RAG with Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-interactive-qa-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4 – Interactive Q&amp;A Interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4 – Interactive Q&amp;A Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#making-your-rag-functions-importable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Making your RAG functions importable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-41-command-line-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 4.1 – Command-Line Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-42-streamlit-web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 4.2 – Streamlit Web Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giving-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Giving feedback
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -839,6 +1253,391 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ollama
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-0-dataset-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 0 – Dataset Preparation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 0 – Dataset Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-the-dataset-from-hugging-face" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Download the Dataset from Hugging Face
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-load-the-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Load the Dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-convert-to-document-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Convert to Document Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-vector-databases-faiss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1 – Vector Databases &amp; FAISS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1 – Vector Databases &amp; FAISS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-11-load-embedding-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.1 – Load Embedding Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-12-create-sample-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.2 – Create Sample Embeddings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-13-compute-similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.3 – Compute Similarity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-14-build-faiss-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.4 – Build FAISS Index
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-15-search-with-faiss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.5 – Search with FAISS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-building-rag-from-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2 – Building RAG from Scratch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2 – Building RAG from Scratch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-21-document-chunking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.1 – Document Chunking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-22-process-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.2 – Process Documents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-23-create-embeddings-build-a-cosine-similarity-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.3 – Create Embeddings &amp; Build a Cosine-Similarity Index
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-24-implement-retrieval-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.4 – Implement Retrieval Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-25-build-complete-rag-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.5 – Build Complete RAG Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-langchain-advanced-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3 – LangChain &amp; Advanced Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3 – LangChain &amp; Advanced Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-31-langchain-document-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.1 – LangChain Document Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-32-langchain-vector-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.2 – LangChain Vector Store
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-33-rag-chain-with-lcel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.3 – RAG Chain with LCEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-34-conversational-agentic-rag-with-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.4 – Conversational Agentic RAG with Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-interactive-qa-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4 – Interactive Q&amp;A Interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4 – Interactive Q&amp;A Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#making-your-rag-functions-importable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Making your RAG functions importable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-41-command-line-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 4.1 – Command-Line Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-42-streamlit-web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 4.2 – Streamlit Web Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giving-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Giving feedback
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -863,7 +1662,718 @@
 
 
 <h1 id="04-building-your-own-rag-pipeline-with-langchain">04 - Building your own RAG pipeline with LangChain<a class="headerlink" href="#04-building-your-own-rag-pipeline-with-langchain" title="Permanent link">¶</a></h1>
-<p>Details will be added shortly.</p>
+<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">¶</a></h2>
+<p>The main goal of this laboratory is to understand how Retrieval-Augmented Generation (RAG) works by building a RAG system from scratch (embeddings, vector search, chunking, retrieval, prompting), then rebuilding it with LangChain, extending it into a conversational agent, and finally putting it behind a command-line and a web interface. The knowledge base is Simple English Wikipedia.</p>
+<p>The structure of this laboratory is as follows:</p>
+<ol>
+<li>Installing the required dependencies and downloading the dataset.</li>
+<li>Dataset preparation [1 point]</li>
+<li>Vector Databases &amp; FAISS [4 points in total]<ol>
+<li>Load embedding model [0.5 point]</li>
+<li>Create sample embeddings [0.5 point]</li>
+<li>Compute similarity [1 point]</li>
+<li>Build FAISS index [1 point]</li>
+<li>Search with FAISS [1 point]</li>
+</ol>
+</li>
+<li>RAG from Scratch [6 points in total]<ol>
+<li>Document chunking [0.5 point]</li>
+<li>Process documents [0.5 point]</li>
+<li>Create embeddings &amp; build a cosine-similarity index [1 point]</li>
+<li>Implement retrieval function [2 points]</li>
+<li>Build complete RAG pipeline [2 points]</li>
+</ol>
+</li>
+<li>LangChain &amp; Advanced Patterns [5 points in total]<ol>
+<li>LangChain document processing [0.5 point]</li>
+<li>LangChain vector store [0.5 point]</li>
+<li>RAG chain with LCEL [2 points]</li>
+<li>Conversational agentic RAG with memory [2 points]</li>
+</ol>
+</li>
+<li>Interactive Q&amp;A Interface [4 points in total]<ol>
+<li>Command-line interface [2 points]</li>
+<li>Streamlit web interface [2 points]</li>
+</ol>
+</li>
+<li>Giving feedback [+1 point]</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Grading</p>
+<p>In order to pass this laboratory, you must obtain at least 8 points out of 20.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Screenshot requirement</p>
+<p>At the end of <strong>every</strong> exercise (marked with a <img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> <strong>Screenshot</strong> note), you must take a screenshot of your working solution, including its output, and upload it together with your solution, using the exact filename given in that note (e.g. <code>f0.png</code>, <code>f2_5.png</code>). Solutions missing the required screenshots, or using the wrong filename, will not be accepted.</p>
+<p>If an output does not fit on one screen, split it into several screenshots with a numeric suffix (e.g. <code>f3_4a_1.png</code>, <code>f3_4a_2.png</code>).</p>
+</div>
+<h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">¶</a></h2>
+<p>Don't forget to follow the assignment submission process described under <a href="../../information/github/">GitHub</a> while working on this laboratory.</p>
+<div class="admonition important">
+<p class="admonition-title">Reviewer</p>
+<p>When creating the pull request for this laboratory, assign it to the <code>domonkosadam</code> GitHub user.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Jupyter notebook or plain Python files</p>
+<p>You may solve Parts 0–3 either in a Jupyter notebook or in a plain <code>.py</code> file, whichever you prefer. The code snippets build on each other, so keep them in <strong>one</strong> notebook or module: in Part 4, the command-line and web applications import your functions from it. Name it <code>RAG_Lab_Notebook.ipynb</code> (or <code>RAG_Lab_Notebook.py</code>). Regardless of the format you choose, make sure that <strong>everything</strong> (code, <code>answers.md</code> and the required screenshots) is committed and pushed to your solution branch. Do <strong>not</strong> commit the dataset (<code>data/</code>).</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Written answers</p>
+<p>Some exercises contain questions (marked with <img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> <strong>Written answer</strong>). Answer them in a file called <code>answers.md</code> in the root of your repository, under a heading with the exercise number (e.g. <code>## Exercise 1.2</code>). Your feedback at the end of the laboratory also goes into this file (under <code>## Feedback</code>). Make sure <code>answers.md</code> is committed and pushed together with your solution and screenshots.</p>
+</div>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">¶</a></h2>
+<h3 id="ollama">Ollama<a class="headerlink" href="#ollama" title="Permanent link">¶</a></h3>
+<p>Install Ollama from <a href="https://ollama.com/download">https://ollama.com/download</a> (on macOS also <code>brew install ollama</code>, on Linux <code>curl -fsSL https://ollama.com/install.sh | sh</code>), then pull the model used in this laboratory:</p>
+<div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>pull<span class="w"> </span>llama3.2:3b
+ollama<span class="w"> </span>list
+</code></pre></div>
+<h3 id="python-dependencies">Python dependencies<a class="headerlink" href="#python-dependencies" title="Permanent link">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Mandatory</p>
+<p>You need <strong>Python 3.11 – 3.14</strong> on Windows (x64), Linux (x64/arm64) or macOS 14+ (Apple Silicon). <em>Intel Mac:</em> use Python 3.11 or 3.12; the requirements file then installs an older, compatible PyTorch/Transformers stack automatically. <em>Windows on ARM:</em> install the x64 build of Python (it runs under emulation), because some packages have no native Windows-ARM builds.</p>
+<p>Create a virtual environment and install the pinned dependencies. The requirements file pins the exact version of <strong>every</strong> package, including all indirect dependencies (with platform-specific versions where needed), so everyone gets the same, tested environment. On Linux, PyTorch comes with its CUDA libraries, so expect about 3 GB of downloads. If <code>pip</code> reports success but installed almost nothing (check with <code>pip list</code>), your Python version / platform combination is not supported (see above).</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">          </span><span class="c1"># Windows: .venv\Scripts\activate</span>
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>https://raw.githubusercontent.com/VIAUMSMA001/laboratories/main/docs/laboratories/04-custom-rag-langchain/requirements.txt
+</code></pre></div>
+</div>
+<p>The main packages in the requirements file are:</p>
+<div class="highlight"><pre><span></span><code>faiss-cpu==1.13.2
+ipywidgets==8.1.9
+jupyterlab==4.6.4
+langchain-chroma==1.1.0
+langchain-core==1.6.5
+langchain-huggingface==1.2.2
+langchain-ollama==1.1.0
+langchain-text-splitters==1.1.2
+langchain==1.4.2
+langgraph==1.2.12
+nbconvert==7.17.1
+numpy==2.4.6   (Intel Mac: 1.26.4)
+pandas==3.0.6
+pyarrow==25.0.1
+requests==2.34.2
+sentence-transformers==6.1.0   (Intel Mac: 5.7.0)
+streamlit==1.64.0
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Troubleshooting (macOS)</p>
+<p>If Python crashes with a <em>segmentation fault</em> when FAISS and PyTorch are used together, make sure you installed exactly the pinned <code>faiss-cpu==1.13.2</code>. As a last resort, start Jupyter (or your script) with the environment variable <code>OMP_NUM_THREADS=1</code>, e.g. <code>OMP_NUM_THREADS=1 jupyter lab</code>.</p>
+</div>
+<h2 id="part-0-dataset-preparation">Part 0 – Dataset Preparation<a class="headerlink" href="#part-0-dataset-preparation" title="Permanent link">¶</a></h2>
+<h3 id="step-1-download-the-dataset-from-hugging-face">Step 1: Download the Dataset from Hugging Face<a class="headerlink" href="#step-1-download-the-dataset-from-hugging-face" title="Permanent link">¶</a></h3>
+<ol>
+<li>Visit: <strong><a href="https://huggingface.co/datasets/wikimedia/wikipedia">https://huggingface.co/datasets/wikimedia/wikipedia</a></strong></li>
+<li>Select configuration: <strong>20231101.simple</strong> (Simple English Wikipedia)</li>
+<li>Go to the "Files and versions" tab</li>
+<li>Download: <code>20231101.simple/train-00000-of-00001.parquet</code> (~150 MB)</li>
+<li>Save it as <code>data/wikipedia.parquet</code> (create a <code>data/</code> folder next to your notebook or script)</li>
+</ol>
+<p><strong>Alternative – Hugging Face CLI</strong> (<code>huggingface_hub</code> is already installed as a dependency):
+</p><div class="highlight"><pre><span></span><code>hf<span class="w"> </span>download<span class="w"> </span>wikimedia/wikipedia<span class="w"> </span><span class="m">20231101</span>.simple/train-00000-of-00001.parquet<span class="w"> </span>--repo-type<span class="w"> </span>dataset<span class="w"> </span>--local-dir<span class="w"> </span>./data
+mv<span class="w"> </span>data/20231101.simple/train-00000-of-00001.parquet<span class="w"> </span>data/wikipedia.parquet
+</code></pre></div><p></p>
+<h3 id="step-2-load-the-dataset">Step 2: Load the Dataset<a class="headerlink" href="#step-2-load-the-dataset" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># True when this code runs in Jupyter or as a script, False when it is imported as a module by the Part 4 apps.</span>
+<span class="c1"># The demo/test code below only runs when it is True, which keeps the import in Part 4 faster.</span>
+<span class="n">RUN_DEMOS</span> <span class="o">=</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span>
+
+<span class="n">DATA_PATH</span> <span class="o">=</span> <span class="s2">"data/wikipedia.parquet"</span>
+
+<span class="c1"># TODO: Load the parquet file into a DataFrame called `df`.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Loaded </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> articles"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Columns: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="step-3-convert-to-document-format">Step 3: Convert to Document Format<a class="headerlink" href="#step-3-convert-to-document-format" title="Permanent link">¶</a></h3>
+<p>To keep the lab fast we only use the first <code>N_DOCS</code> articles. Feel free to increase it later to try the full dataset.</p>
+<div class="highlight"><pre><span></span><code><span class="n">N_DOCS</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># TODO: Build `documents`: a list of dicts with the keys 'title', 'text' and 'url',</span>
+<span class="c1">#       one dict per article, limited to the first N_DOCS articles.</span>
+<span class="n">documents</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Prepared </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span><span class="si">}</span><span class="s2"> documents"</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the number of loaded articles, the column names and the number of prepared documents, and upload it together with your solution as <code>f0.png</code>.</p>
+</div>
+<h2 id="part-1-vector-databases-faiss">Part 1 – Vector Databases &amp; FAISS<a class="headerlink" href="#part-1-vector-databases-faiss" title="Permanent link">¶</a></h2>
+<p>Vector databases enable semantic search by storing and retrieving high-dimensional embeddings. Unlike keyword search, vector search finds documents based on meaning similarity. FAISS (Facebook AI Similarity Search) is an efficient library for similarity search over millions of vectors, which makes it a good fit for RAG systems.</p>
+<h3 id="exercise-11-load-embedding-model">Exercise 1.1 – Load Embedding Model<a class="headerlink" href="#exercise-11-load-embedding-model" title="Permanent link">¶</a></h3>
+<p>Load <code>all-MiniLM-L6-v2</code> (a fast, compact sentence-embedding model) with the <code>sentence-transformers</code> library and determine the dimension of the vectors it produces. (Many tutorials use a method name that was renamed recently; if you get a <code>FutureWarning</code>, switch to the new name.)</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sentence_transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">SentenceTransformer</span>
+
+<span class="c1"># TODO: Load the 'all-MiniLM-L6-v2' model.</span>
+<span class="n">embedding_model</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># TODO: Store the dimension of the vectors produced by the model (ask the model, do not hard-code it).</span>
+<span class="n">EMBEDDING_DIM</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Embedding dimension: </span><span class="si">{</span><span class="n">EMBEDDING_DIM</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the printed embedding dimension, and upload it together with your solution as <code>f1_1.png</code>.</p>
+</div>
+<h3 id="exercise-12-create-sample-embeddings">Exercise 1.2 – Create Sample Embeddings<a class="headerlink" href="#exercise-12-create-sample-embeddings" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">sample_texts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"The cat sat on the mat"</span><span class="p">,</span>
+    <span class="s2">"A feline rested on the rug"</span><span class="p">,</span>
+    <span class="s2">"Dogs are loyal animals"</span><span class="p">,</span>
+    <span class="s2">"Python is a programming language"</span><span class="p">,</span>
+    <span class="s2">"Machine learning uses neural networks"</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># TODO: Embed all sample_texts in a single call.</span>
+<span class="n">sample_embeddings</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Shape: </span><span class="si">{</span><span class="n">sample_embeddings</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the printed shape of the sample embeddings, and upload it together with your solution as <code>f1_2.png</code>.</p>
+</div>
+<h3 id="exercise-13-compute-similarity">Exercise 1.3 – Compute Similarity<a class="headerlink" href="#exercise-13-compute-similarity" title="Permanent link">¶</a></h3>
+<ol>
+<li>Implement <code>cosine_similarity(vec1, vec2)</code> with NumPy (do not use a library function that computes it for you).</li>
+<li>Compute the full similarity matrix of the five sample sentences and print the pair of <strong>different</strong> sentences that is most similar.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cosine_similarity</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">vec2</span><span class="p">):</span>
+    <span class="c1"># TODO</span>
+    <span class="k">pass</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Similarity (cat vs feline): </span><span class="si">{</span><span class="n">cosine_similarity</span><span class="p">(</span><span class="n">sample_embeddings</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">sample_embeddings</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Similarity (cat vs dog):    </span><span class="si">{</span><span class="n">cosine_similarity</span><span class="p">(</span><span class="n">sample_embeddings</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">sample_embeddings</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># TODO: Build the 5x5 similarity matrix and print the most similar pair of different sentences.</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the two printed similarities and the most similar pair of different sentences, and upload it together with your solution as <code>f1_3.png</code>.</p>
+</div>
+<h3 id="exercise-14-build-faiss-index">Exercise 1.4 – Build FAISS Index<a class="headerlink" href="#exercise-14-build-faiss-index" title="Permanent link">¶</a></h3>
+<p>Create an exact-search FAISS index that uses <strong>L2 (Euclidean) distance</strong> and add the sample embeddings to it. Exact (flat) search is linear in the number of vectors, which is acceptable below ~1M vectors.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">faiss</span>
+
+<span class="c1"># TODO: Create the index and add the sample embeddings.</span>
+<span class="n">index</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Vectors in index: </span><span class="si">{</span><span class="n">index</span><span class="o">.</span><span class="n">ntotal</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the printed number of vectors in the index, and upload it together with your solution as <code>f1_4.png</code>.</p>
+</div>
+<h3 id="exercise-15-search-with-faiss">Exercise 1.5 – Search with FAISS<a class="headerlink" href="#exercise-15-search-with-faiss" title="Permanent link">¶</a></h3>
+<p>Find the 3 sample sentences closest to the query.</p>
+<div class="highlight"><pre><span></span><code><span class="n">query</span> <span class="o">=</span> <span class="s2">"The kitten is sleeping"</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># TODO: Search the index. `distances` and `indices` must be the arrays returned by FAISS.</span>
+<span class="n">distances</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Query: '</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">'</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rank</span><span class="p">,</span> <span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">distances</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">indices</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">sample_texts</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2"> (L2 distance: </span><span class="si">{</span><span class="n">dist</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the three search results with their L2 distances, and upload it together with your solution as <code>f1_5.png</code>.</p>
+</div>
+<h2 id="part-2-building-rag-from-scratch">Part 2 – Building RAG from Scratch<a class="headerlink" href="#part-2-building-rag-from-scratch" title="Permanent link">¶</a></h2>
+<h3 id="exercise-21-document-chunking">Exercise 2.1 – Document Chunking<a class="headerlink" href="#exercise-21-document-chunking" title="Permanent link">¶</a></h3>
+<p>Chunking breaks long documents into smaller segments that fit the LLM context window and make retrieval more precise. Here we chunk by <strong>characters</strong> (not tokens): 500 characters with a 50-character overlap between neighboring chunks.</p>
+<p>Requirements:</p>
+<ul>
+<li>consecutive chunks overlap by exactly <code>overlap</code> characters,</li>
+<li>no chunk may be completely contained in the previous one (i.e. no tiny duplicate chunk at the end),</li>
+<li>an empty text yields an empty list,</li>
+<li>raise a <code>ValueError</code> if <code>overlap &gt;= chunk_size</code>.</li>
+</ul>
+<p>The self-check below must pass.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">chunk_text</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">chunk_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="n">overlap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Split `text` into overlapping character chunks."""</span>
+    <span class="c1"># TODO</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Self-check (do not modify)</span>
+<span class="k">assert</span> <span class="n">chunk_text</span><span class="p">(</span><span class="s2">"abcdefghij"</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"abcd"</span><span class="p">,</span> <span class="s2">"defg"</span><span class="p">,</span> <span class="s2">"ghij"</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">chunk_text</span><span class="p">(</span><span class="s2">"abc"</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"abc"</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">chunk_text</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="p">[]</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">chunk_text</span><span class="p">(</span><span class="s2">"abc"</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">"expected ValueError"</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"chunk_text passed all checks"</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the passing self-check, and upload it together with your solution as <code>f2_1.png</code>.</p>
+</div>
+<h3 id="exercise-22-process-documents">Exercise 2.2 – Process Documents<a class="headerlink" href="#exercise-22-process-documents" title="Permanent link">¶</a></h3>
+<p>Chunk every document. Keep the chunk texts in <code>all_chunks</code> and, <strong>at the same position</strong>, a metadata dict in <code>chunk_metadata</code> with the keys <code>title</code>, <code>url</code> and <code>chunk_id</code> (the index of the chunk within its document).</p>
+<div class="highlight"><pre><span></span><code><span class="n">all_chunks</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">chunk_metadata</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># TODO</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span><span class="si">}</span><span class="s2"> documents -&gt; </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_chunks</span><span class="p">)</span><span class="si">}</span><span class="s2"> chunks"</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the printed number of documents and chunks, and upload it together with your solution as <code>f2_2.png</code>.</p>
+</div>
+<h3 id="exercise-23-create-embeddings-build-a-cosine-similarity-index">Exercise 2.3 – Create Embeddings &amp; Build a Cosine-Similarity Index<a class="headerlink" href="#exercise-23-create-embeddings-build-a-cosine-similarity-index" title="Permanent link">¶</a></h3>
+<p>In Part 1 you used L2 distance. For text retrieval, <strong>cosine similarity</strong> is the usual choice. FAISS has no dedicated cosine index, but you can get cosine similarity from an <strong>inner-product</strong> index if you prepare the vectors correctly.</p>
+<ol>
+<li>Embed all chunks (this can take a few minutes – a progress bar helps).</li>
+<li>Build <code>rag_index</code> so that <code>rag_index.search()</code> returns cosine similarities (higher = more similar).</li>
+<li>Answer the question below.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Long-running step</p>
+<p>Embedding all chunks may take 1–10 minutes depending on your hardware.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1"># TODO</span>
+<span class="n">chunk_embeddings</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">rag_index</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Vectors in index: </span><span class="si">{</span><span class="n">rag_index</span><span class="o">.</span><span class="n">ntotal</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the printed number of vectors in the cosine-similarity index, and upload it together with your solution as <code>f2_3.png</code>.</p>
+</div>
+<p><strong>Question:</strong> Why does an inner-product index return cosine similarity in your setup? What would go wrong without your preparation step?</p>
+<div class="admonition question">
+<p class="admonition-title"><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> Written answer</p>
+<p>Answer this question in <code>answers.md</code>, under the heading <code>## Exercise 2.3</code>.</p>
+</div>
+<h3 id="exercise-24-implement-retrieval-function">Exercise 2.4 – Implement Retrieval Function<a class="headerlink" href="#exercise-24-implement-retrieval-function" title="Permanent link">¶</a></h3>
+<p>Return the <code>k</code> most relevant chunks for a query as a list of dicts with the keys <code>text</code>, <code>title</code>, <code>url</code> and <code>score</code> (cosine similarity as a Python <code>float</code>, most similar first).</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">retrieve_documents</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]:</span>
+    <span class="c1"># TODO</span>
+    <span class="k">pass</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">retrieve_documents</span><span class="p">(</span><span class="s2">"How does a computer work?"</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rank</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">doc</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2"> (cosine similarity: </span><span class="si">{</span><span class="n">doc</span><span class="p">[</span><span class="s1">'score'</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   </span><span class="si">{</span><span class="n">doc</span><span class="p">[</span><span class="s1">'text'</span><span class="p">][:</span><span class="mi">150</span><span class="p">]</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the retrieved documents with their cosine similarities, and upload it together with your solution as <code>f2_4.png</code>.</p>
+</div>
+<h3 id="exercise-25-build-complete-rag-pipeline">Exercise 2.5 – Build Complete RAG Pipeline<a class="headerlink" href="#exercise-25-build-complete-rag-pipeline" title="Permanent link">¶</a></h3>
+<p><code>query_llm()</code> is provided. Implement <code>rag_query(question, k)</code>, which retrieves context, builds a prompt and asks the LLM. It must return a dict with the keys <code>question</code>, <code>answer</code> and <code>sources</code> (list of dicts with <code>title</code> and <code>url</code>).</p>
+<p>Your prompt must make the model answer <strong>only from the retrieved context</strong> and admit when the context does not contain the answer. The second test question checks this.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">OLLAMA_URL</span> <span class="o">=</span> <span class="s2">"http://localhost:11434"</span>
+<span class="n">LLM_MODEL</span> <span class="o">=</span> <span class="s2">"llama3.2:3b"</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">query_llm</span><span class="p">(</span><span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">LLM_MODEL</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Send a prompt to a local Ollama model and return the generated text."""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">OLLAMA_URL</span><span class="si">}</span><span class="s2">/api/generate"</span><span class="p">,</span>
+            <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">"model"</span><span class="p">:</span> <span class="n">model</span><span class="p">,</span> <span class="s2">"prompt"</span><span class="p">:</span> <span class="n">prompt</span><span class="p">,</span> <span class="s2">"stream"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"options"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"temperature"</span><span class="p">:</span> <span class="mi">0</span><span class="p">}},</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Cannot connect to Ollama. Is it running? Try: ollama serve"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Ollama returned </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">. Did you run: ollama pull </span><span class="si">{</span><span class="n">model</span><span class="si">}</span><span class="s2">?"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">"response"</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">rag_query</span><span class="p">(</span><span class="n">question</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+    <span class="c1"># TODO</span>
+    <span class="k">pass</span>
+
+
+<span class="k">if</span> <span class="n">RUN_DEMOS</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"What is photosynthesis?"</span><span class="p">,</span> <span class="s2">"Who won the 2030 FIFA World Cup?"</span><span class="p">]:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">rag_query</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Question: </span><span class="si">{</span><span class="n">question</span><span class="si">}</span><span class="se">\n</span><span class="s2">Answer: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Sources:"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">"sources"</span><span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">doc</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">doc</span><span class="p">[</span><span class="s1">'url'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the answers and sources for both test questions, and upload it together with your solution as <code>f2_5.png</code>.</p>
+</div>
+<h2 id="part-3-langchain-advanced-patterns">Part 3 – LangChain &amp; Advanced Patterns<a class="headerlink" href="#part-3-langchain-advanced-patterns" title="Permanent link">¶</a></h2>
+<p>In Part 2 you built a complete RAG system from scratch. Production systems usually rely on a framework instead. In this part you rebuild the system with <strong>LangChain 1.x</strong>:</p>
+<ul>
+<li><strong>LCEL</strong> (LangChain Expression Language): compose runnables with the <code>|</code> operator</li>
+<li><strong>Vector store integrations</strong>: FAISS no longer has an official LangChain integration (the <code>langchain-community</code> package it lived in was sunset in 2026), so we use <strong>Chroma</strong> through the official <code>langchain-chroma</code> package. You keep using raw FAISS where you already know it (Parts 1–2).</li>
+<li><strong>Agents</strong> (<code>create_agent</code>) with tools and memory for conversational RAG</li>
+</ul>
+<p>Only use the modern packages imported in the code snippets (<code>langchain</code>, <code>langchain_core</code>, <code>langchain_chroma</code>, …). The legacy <code>langchain_classic</code> / <code>langchain_community</code> packages are not allowed.</p>
+<p>Reference documentation: <a href="https://docs.langchain.com/oss/python/langchain/overview">https://docs.langchain.com/oss/python/langchain/overview</a></p>
+<h3 id="exercise-31-langchain-document-processing">Exercise 3.1 – LangChain Document Processing<a class="headerlink" href="#exercise-31-langchain-document-processing" title="Permanent link">¶</a></h3>
+<p>Split the LangChain documents into chunks of 500 characters with 50 characters of overlap using the recursive character splitter.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_text_splitters</span><span class="w"> </span><span class="kn">import</span> <span class="n">RecursiveCharacterTextSplitter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.documents</span><span class="w"> </span><span class="kn">import</span> <span class="n">Document</span>
+
+<span class="n">lc_documents</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Document</span><span class="p">(</span><span class="n">page_content</span><span class="o">=</span><span class="n">doc</span><span class="p">[</span><span class="s2">"text"</span><span class="p">],</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">"title"</span><span class="p">:</span> <span class="n">doc</span><span class="p">[</span><span class="s2">"title"</span><span class="p">],</span> <span class="s2">"url"</span><span class="p">:</span> <span class="n">doc</span><span class="p">[</span><span class="s2">"url"</span><span class="p">]})</span>
+    <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">documents</span>
+<span class="p">]</span>
+
+<span class="c1"># TODO</span>
+<span class="n">text_splitter</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">lc_chunks</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">lc_documents</span><span class="p">)</span><span class="si">}</span><span class="s2"> documents -&gt; </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">lc_chunks</span><span class="p">)</span><span class="si">}</span><span class="s2"> chunks"</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the printed number of documents and chunks, and upload it together with your solution as <code>f3_1.png</code>.</p>
+</div>
+<p><strong>Question:</strong> Your <code>chunk_text()</code> produced a different number of chunks than the recursive splitter. Why? Which one produces better chunks for retrieval?</p>
+<div class="admonition question">
+<p class="admonition-title"><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> Written answer</p>
+<p>Answer this question in <code>answers.md</code>, under the heading <code>## Exercise 3.1</code>.</p>
+</div>
+<h3 id="exercise-32-langchain-vector-store">Exercise 3.2 – LangChain Vector Store<a class="headerlink" href="#exercise-32-langchain-vector-store" title="Permanent link">¶</a></h3>
+<p>Create an in-memory Chroma vector store from <code>lc_chunks</code>, using the same <code>all-MiniLM-L6-v2</code> model through LangChain's Hugging Face embeddings wrapper.</p>
+<p>Chroma keeps in-memory collections for the lifetime of the Python process, so a naive implementation adds every chunk <strong>again</strong> each time you re-run the code (and duplicate chunks then fill your top-k results). Your code must be safe to re-run: run it twice and make sure the provided check passes. (In a notebook, run the cell twice. In a <code>.py</code> file every run starts a fresh process, so wrap the store-building code in a function and call it twice in the same run.)</p>
+<p>Note: Chroma accepts only a limited number of documents in a single <code>add_documents()</code> call (5,461 in the pinned version, fewer than our chunks); <code>Chroma.from_documents()</code> splits the data into batches for you.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_huggingface</span><span class="w"> </span><span class="kn">import</span> <span class="n">HuggingFaceEmbeddings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_chroma</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chroma</span>
+
+<span class="c1"># TODO</span>
+<span class="n">lc_embeddings</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">vectorstore</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">stored</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vectorstore</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[])[</span><span class="s2">"ids"</span><span class="p">])</span>
+<span class="k">assert</span> <span class="n">stored</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">lc_chunks</span><span class="p">),</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">stored</span><span class="si">}</span><span class="s2"> vectors stored for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">lc_chunks</span><span class="p">)</span><span class="si">}</span><span class="s2"> chunks - re-running duplicated the data"</span>
+
+<span class="k">for</span> <span class="n">doc</span><span class="p">,</span> <span class="n">distance</span> <span class="ow">in</span> <span class="n">vectorstore</span><span class="o">.</span><span class="n">similarity_search_with_score</span><span class="p">(</span><span class="s2">"How does a computer work?"</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2"> (distance: </span><span class="si">{</span><span class="n">distance</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">page_content</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the output of this code after building the vector store a <strong>second</strong> time in the same Python process (the duplicate check must pass), and upload it together with your solution as <code>f3_2.png</code>.</p>
+</div>
+<h3 id="exercise-33-rag-chain-with-lcel">Exercise 3.3 – RAG Chain with LCEL<a class="headerlink" href="#exercise-33-rag-chain-with-lcel" title="Permanent link">¶</a></h3>
+<p>Build <code>qa_chain</code>, a single LCEL runnable that takes the question string and returns a dict with:</p>
+<ul>
+<li><code>input</code>: the question,</li>
+<li><code>context</code>: the list of retrieved <code>Document</code> objects (top 3),</li>
+<li><code>answer</code>: the LLM answer as a plain string.</li>
+</ul>
+<p>Requirements:</p>
+<ul>
+<li>use <code>vectorstore.as_retriever(...)</code> for retrieval,</li>
+<li>the prompt is a <code>ChatPromptTemplate</code> with a system message (containing the context) and a human message (containing the question),</li>
+<li>the model must only answer from the context,</li>
+<li>build it only from <code>langchain_core</code> runnables (e.g. <code>RunnableParallel</code>, <code>RunnablePassthrough</code>, <code>.assign()</code>, <code>|</code>).</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.prompts</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.output_parsers</span><span class="w"> </span><span class="kn">import</span> <span class="n">StrOutputParser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.runnables</span><span class="w"> </span><span class="kn">import</span> <span class="n">RunnableParallel</span><span class="p">,</span> <span class="n">RunnablePassthrough</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_ollama</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatOllama</span>
+
+<span class="n">llm</span> <span class="o">=</span> <span class="n">ChatOllama</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">LLM_MODEL</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># TODO</span>
+<span class="n">retriever</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">qa_prompt</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">qa_chain</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">if</span> <span class="n">RUN_DEMOS</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">qa_chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="s2">"What is photosynthesis?"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Answer: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">"context"</span><span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'url'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the answer and its sources, and upload it together with your solution as <code>f3_3.png</code>.</p>
+</div>
+<h3 id="exercise-34-conversational-agentic-rag-with-memory">Exercise 3.4 – Conversational Agentic RAG with Memory<a class="headerlink" href="#exercise-34-conversational-agentic-rag-with-memory" title="Permanent link">¶</a></h3>
+<p>A fixed chain always retrieves with the raw user message, so a follow-up such as <em>"Which is the largest planet in it?"</em> retrieves poorly. In <strong>agentic RAG</strong> the LLM decides <em>when</em> to search and <em>what</em> to search for, so it can turn a follow-up into a self-contained search query. Conversation memory comes from a <strong>checkpointer</strong>: every call with the same <code>thread_id</code> continues the same conversation.</p>
+<p>Implement:</p>
+<ol>
+<li>A tool <code>search_wikipedia(query: str)</code> that searches <code>vectorstore</code> (top 3). The model must receive the text of the chunks (include the article titles), and <strong>your code</strong> must also get the retrieved <code>Document</code> objects back, so you can show sources. Hint: read <code>help(tool)</code> and look for <code>response_format</code>.</li>
+<li><code>conversation_agent</code>: an agent built with <code>create_agent</code> using <code>agent_llm</code>, your tool, a system prompt that forces searching before answering, and an in-memory checkpointer.</li>
+<li><code>ask(question, thread_id)</code>: sends one user message to the agent and returns <code>{"answer": str, "sources": list[Document]}</code>, where <code>sources</code> contains only the documents retrieved <strong>during this turn</strong>.</li>
+</ol>
+<p>Note: tool calling needs a reasonably capable model; <code>llama3.2:1b</code>, for example, often produces malformed tool calls.</p>
+<p>Reference: <a href="https://docs.langchain.com/oss/python/langchain/agents">https://docs.langchain.com/oss/python/langchain/agents</a> and <a href="https://docs.langchain.com/oss/python/langchain/short-term-memory">https://docs.langchain.com/oss/python/langchain/short-term-memory</a></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">langchain.agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_agent</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">tool</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langgraph.checkpoint.memory</span><span class="w"> </span><span class="kn">import</span> <span class="n">InMemorySaver</span>
+
+<span class="n">agent_llm</span> <span class="o">=</span> <span class="n">ChatOllama</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">LLM_MODEL</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># TODO 1: search_wikipedia tool</span>
+
+
+<span class="c1"># TODO 2: conversation_agent</span>
+<span class="n">conversation_agent</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ask</span><span class="p">(</span><span class="n">question</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">thread_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"lab_session"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="c1"># TODO 3</span>
+    <span class="k">pass</span>
+
+
+<span class="k">if</span> <span class="n">RUN_DEMOS</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"What is the Solar System?"</span><span class="p">,</span> <span class="s2">"Which is the largest planet in it?"</span><span class="p">]:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">ask</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">thread_id</span><span class="o">=</span><span class="s2">"notebook_test"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Question: </span><span class="si">{</span><span class="n">question</span><span class="si">}</span><span class="se">\n</span><span class="s2">Answer: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">"sources"</span><span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'url'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of both questions with their answers and sources, and upload it together with your solution as <code>f3_4a.png</code>.</p>
+</div>
+<p>Print the full message list stored for the <code>notebook_test</code> thread (message type, content, and the arguments of every tool call).</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the printed message list, including the tool calls and their arguments, and upload it together with your solution as <code>f3_4b.png</code>.</p>
+</div>
+<p><strong>Question:</strong> Which search query did the agent use for the follow-up question, and why does this work better than retrieving with the raw question? Compare the answers with the retrieved sources: do they contain information that is <strong>not</strong> in the sources? What does that mean for trusting RAG answers, and how could you reduce it?</p>
+<div class="admonition question">
+<p class="admonition-title"><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> Written answer</p>
+<p>Answer this question in <code>answers.md</code>, under the heading <code>## Exercise 3.4</code>.</p>
+</div>
+<h2 id="part-4-interactive-qa-interface">Part 4 – Interactive Q&amp;A Interface<a class="headerlink" href="#part-4-interactive-qa-interface" title="Permanent link">¶</a></h2>
+<h3 id="making-your-rag-functions-importable">Making your RAG functions importable<a class="headerlink" href="#making-your-rag-functions-importable" title="Permanent link">¶</a></h3>
+<p>Both applications of this part import your functions from Parts 2–3 as a Python module called <code>RAG_Lab_Notebook</code>:</p>
+<ul>
+<li>
+<p>If you worked in a <strong>notebook</strong> called <code>RAG_Lab_Notebook.ipynb</code>, convert it to a module (in a terminal):
+    </p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>python<span class="w"> </span>RAG_Lab_Notebook.ipynb
+</code></pre></div>
+    This creates <code>RAG_Lab_Notebook.py</code>. Re-export it whenever you change the notebook.<p></p>
+</li>
+<li>
+<p>If you worked in a <strong>plain Python file</strong>, it already is the module; just make sure it is called <code>RAG_Lab_Notebook.py</code>.</p>
+</li>
+</ul>
+<p>Keep <code>RAG_Lab_Notebook.py</code>, <code>rag_cli_exercise.py</code>, <code>rag_streamlit_exercise.py</code> and the <code>data/</code> folder in the same directory.</p>
+<div class="admonition tip">
+<p class="admonition-title">Performance</p>
+<p>Importing <code>RAG_Lab_Notebook</code> re-runs every top-level statement, including building both indexes (one to a few minutes, depending on your hardware). The provided test code is skipped automatically on import (<code>RUN_DEMOS</code>); do the same with any extra test code you added. Optionally, persist the FAISS index (<code>faiss.write_index</code> / <code>faiss.read_index</code>) and the Chroma store (<code>persist_directory=</code>) and load them instead of rebuilding.</p>
+</div>
+<h3 id="exercise-41-command-line-interface">Exercise 4.1 – Command-Line Interface<a class="headerlink" href="#exercise-41-command-line-interface" title="Permanent link">¶</a></h3>
+<p>Create <code>rag_cli_exercise.py</code> from the skeleton below and complete the TODOs. It uses your <strong>Part 2</strong> <code>rag_query()</code> and manages the conversation history manually: before retrieval, a follow-up question such as <em>"Which is the largest planet in it?"</em> has to be rewritten into a standalone question with the help of the recent history. Run it with <code>python rag_cli_exercise.py</code>.</p>
+<div class="highlight"><span class="filename">rag_cli_exercise.py</span><pre><span></span><code><span class="sd">"""</span>
+<span class="sd">RAG Command-Line Interface - Exercise 4.1</span>
+<span class="sd">=========================================</span>
+<span class="sd">Conversational CLI on top of your Part 2 `rag_query()` with manually managed history.</span>
+
+<span class="sd">Setup:</span>
+<span class="sd">1. Export your notebook: python -m nbconvert --to python RAG_Lab_Notebook.ipynb</span>
+<span class="sd">2. Complete the TODOs below</span>
+<span class="sd">3. Run: python rag_cli_exercise.py</span>
+
+<span class="sd">Problem to solve:</span>
+<span class="sd">    rag_query() retrieves with the raw question, so a follow-up such as</span>
+<span class="sd">    "Who developed it?" retrieves poorly. Before retrieval, use the LLM to rewrite</span>
+<span class="sd">    the follow-up into a standalone question with the help of the recent history.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Loading the RAG system (building the indexes takes one to a few minutes)..."</span><span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">RAG_Lab_Notebook</span><span class="w"> </span><span class="kn">import</span> <span class="n">query_llm</span><span class="p">,</span> <span class="n">rag_query</span>  <span class="c1"># noqa: E402</span>
+
+<span class="n">HISTORY_WINDOW</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># number of previous exchanges used to rewrite a follow-up</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">make_standalone_question</span><span class="p">(</span><span class="n">question</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">chat_history</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Rewrite `question` into a self-contained question using the last HISTORY_WINDOW</span>
+<span class="sd">    (question, answer) exchanges of `chat_history`. Use `query_llm()` for the rewrite.</span>
+
+<span class="sd">    - Without history, return the question unchanged (no LLM call).</span>
+<span class="sd">    - The LLM must only rewrite the question, not answer it; return just the rewritten question.</span>
+<span class="sd">    """</span>
+    <span class="c1"># TODO 1</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">query_rag_with_history</span><span class="p">(</span><span class="n">question</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">chat_history</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Answer `question` with rag_query(), taking the conversation into account.</span>
+
+<span class="sd">    Returns a dict with the keys:</span>
+<span class="sd">        'answer'              - the generated answer</span>
+<span class="sd">        'sources'             - the sources returned by rag_query()</span>
+<span class="sd">        'standalone_question' - the question actually sent to rag_query()</span>
+<span class="sd">    """</span>
+    <span class="c1"># TODO 2</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+
+<span class="c1"># ============================================================================</span>
+<span class="c1"># CLI</span>
+<span class="c1"># ============================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">format_sources</span><span class="p">(</span><span class="n">sources</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Format source documents for display."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">sources</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">""</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"</span><span class="se">\n</span><span class="s2">📚 Sources:"</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">source</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sources</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">source</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'title'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Unknown'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">source</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"url"</span><span class="p">):</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   </span><span class="si">{</span><span class="n">source</span><span class="p">[</span><span class="s1">'url'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"RAG CLI - Conversational Q&amp;A"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Ask questions about the knowledge base. Follow-up questions are understood."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Type 'quit' or 'exit' to end.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="c1"># TODO 3: create the conversation history</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+            <span class="n">question</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">💬 Your question: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">question</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"quit"</span><span class="p">,</span> <span class="s2">"exit"</span><span class="p">,</span> <span class="s2">"q"</span><span class="p">]:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">👋 Goodbye!"</span><span class="p">)</span>
+                <span class="k">break</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">question</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">🔍 Searching..."</span><span class="p">)</span>
+
+            <span class="c1"># TODO 4: answer the question with query_rag_with_history(), print the</span>
+            <span class="c1">#         standalone question (if it differs from the original), the answer</span>
+            <span class="c1">#         and the sources (format_sources), then update the history.</span>
+
+        <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">👋 Goodbye!"</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">❌ Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of a CLI session with at least one follow-up question, showing the rewritten standalone question, the answers and the sources, and upload it together with your solution as <code>f4_1.png</code>.</p>
+</div>
+<h3 id="exercise-42-streamlit-web-interface">Exercise 4.2 – Streamlit Web Interface<a class="headerlink" href="#exercise-42-streamlit-web-interface" title="Permanent link">¶</a></h3>
+<p>Create <code>rag_streamlit_exercise.py</code> from the skeleton below and complete the TODOs. It uses your <strong>Part 3.4</strong> <code>ask()</code> function (agent with memory); the requirements are listed in the docstring.</p>
+<div class="highlight"><span class="filename">rag_streamlit_exercise.py</span><pre><span></span><code><span class="sd">"""</span>
+<span class="sd">RAG Streamlit Web Interface - Exercise 4.2</span>
+<span class="sd">==========================================</span>
+<span class="sd">Conversational web app on top of your Part 3.4 `ask()` function (agent + checkpointer memory).</span>
+
+<span class="sd">Setup:</span>
+<span class="sd">1. Export your notebook: python -m nbconvert --to python RAG_Lab_Notebook.ipynb</span>
+<span class="sd">2. Complete the TODOs below</span>
+<span class="sd">3. Run: python -m streamlit run rag_streamlit_exercise.py</span>
+
+<span class="sd">Requirements:</span>
+<span class="sd">- Every browser session has its own conversation: two browser tabs must not share memory.</span>
+<span class="sd">  (The agent remembers the conversation by thread id; Streamlit keeps per-session data in st.session_state.)</span>
+<span class="sd">- A "New conversation" button in the sidebar starts a fresh conversation (new memory, empty chat).</span>
+<span class="sd">- The full chat is displayed on every rerun, with the sources of each answer in an expander.</span>
+<span class="sd">- A new question is shown immediately, answered with ask() behind a spinner, and stored in the chat.</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">streamlit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">st</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span><span class="n">page_title</span><span class="o">=</span><span class="s2">"Conversational RAG Q&amp;A"</span><span class="p">,</span> <span class="n">page_icon</span><span class="o">=</span><span class="s2">"🤖"</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"wide"</span><span class="p">)</span>
+
+
+<span class="nd">@st</span><span class="o">.</span><span class="n">cache_resource</span><span class="p">(</span><span class="n">show_spinner</span><span class="o">=</span><span class="s2">"Loading the RAG system (the first start takes one to a few minutes)..."</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_rag</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Import the exported notebook once per server process (provided)."""</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">RAG_Lab_Notebook</span><span class="w"> </span><span class="kn">import</span> <span class="n">ask</span>
+    <span class="k">return</span> <span class="n">ask</span>
+
+
+<span class="n">ask</span> <span class="o">=</span> <span class="n">load_rag</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">render_sources</span><span class="p">(</span><span class="n">sources</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Show LangChain Document sources in an expander (provided helper)."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">sources</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">expander</span><span class="p">(</span><span class="s2">"📚 View Sources"</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sources</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"**</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'title'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Unknown'</span><span class="p">)</span><span class="si">}</span><span class="s2">**"</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"url"</span><span class="p">):</span>
+                <span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[🔗 Link](</span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'url'</span><span class="p">]</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">caption</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">page_content</span><span class="p">[:</span><span class="mi">300</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="s2">"..."</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">page_content</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">300</span> <span class="k">else</span> <span class="s2">""</span><span class="p">))</span>
+
+
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"🤖 Conversational RAG Q&amp;A"</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="s2">"Ask questions about Simple English Wikipedia. Follow-up questions are understood."</span><span class="p">)</span>
+
+<span class="c1"># TODO 1: per-session state (conversation id and displayed messages)</span>
+
+<span class="c1"># TODO 2: sidebar with the current conversation id and a "New conversation" button</span>
+
+<span class="c1"># TODO 3: display the chat history</span>
+
+<span class="c1"># TODO 4: handle a new question</span>
+</code></pre></div>
+<p>Also create the following Streamlit configuration file next to the script. It switches off Streamlit's file watcher, which otherwise logs many harmless <code>ModuleNotFoundError: torchvision</code> messages while scanning the machine-learning libraries (if you run the app from another folder, pass <code>--server.fileWatcherType none</code> instead):</p>
+<div class="highlight"><span class="filename">.streamlit/config.toml</span><pre><span></span><code><span class="c1"># Streamlit's file watcher scans every imported module; with PyTorch/Transformers installed this</span>
+<span class="c1"># logs many harmless "ModuleNotFoundError: torchvision" messages. The lab apps do not need auto-reload.</span>
+<span class="k">[server]</span>
+<span class="n">fileWatcherType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"none"</span>
+</code></pre></div>
+<p>Run the application with:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>streamlit<span class="w"> </span>run<span class="w"> </span>rag_streamlit_exercise.py
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the web application showing a conversation with at least one follow-up question and one expanded sources panel, and upload it together with your solution as <code>f4_2a.png</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the same application opened in a second browser tab (or after clicking <em>New conversation</em>), showing that the new conversation does not remember the previous one, and upload it together with your solution as <code>f4_2b.png</code>.</p>
+</div>
+<h2 id="giving-feedback">Giving feedback<a class="headerlink" href="#giving-feedback" title="Permanent link">¶</a></h2>
+<p>Please share your opinion about this laboratory in <code>answers.md</code>, under the heading <code>## Feedback</code>. You can include:</p>
+<ul>
+<li>Your general impression of the laboratory.</li>
+<li>The things you liked or did not like.</li>
+<li>Whether you found the lab easy or difficult.</li>
+<li>Which exercises you enjoyed the most.</li>
+<li>What was necessary but not included in this laboratory.</li>
+<li>What was unnecessary but included in this laboratory.</li>
+</ul>
   <hr>
   <div class="md-source-file">
     <span class="md-source-file__fact"> <span class="md-icon" title="Last update"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -871,8 +2381,8 @@
           </path>
         </svg>
       </span>
-      <span title="2026. szeptember 18. 13:34:24">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. szeptember 18. 13:34:24 CEST"><span class="timeago" datetime="2026-09-18T13:34:24+02:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. szeptember 18. 13:34:24 CEST">2026-09-18</span>
+      <span title="2026. szeptember 30. 20:52:07">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. szeptember 30. 20:52:07 CEST"><span class="timeago" datetime="2026-09-30T20:52:07+02:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. szeptember 30. 20:52:07 CEST">2026-09-30</span>
       </span>
     </span>
 

@@ -24,7 +24,7 @@
     
     
       
-        <title>03 - Integrating a Kocal LLM Into a Python Application - VIAUMSMA001 - AI Technologies</title>
+        <title>03 - Integrating a Local LLM Into a Python Application - VIAUMSMA001 - AI Technologies</title>
       
     
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#03-integrating-a-kocal-llm-into-a-python-application" class="md-skip">
+        <a href="#03-integrating-a-local-llm-into-a-python-application" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              03 - Integrating a Kocal LLM Into a Python Application
+              03 - Integrating a Local LLM Into a Python Application
             
           </span>
         </div>
@@ -621,6 +621,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Integrating a Local LLM Into a Python Application
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -628,7 +646,7 @@
   <span class="md-ellipsis">
     
   
-    03 - Integrating a Kocal LLM Into a Python Application
+    03 - Integrating a Local LLM Into a Python Application
   
 
     
@@ -637,6 +655,469 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Ollama
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-ollama-direct-api-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1 – Ollama Direct API Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1 – Ollama Direct API Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-11-simple-api-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.1 – Simple API Call
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-12-streaming-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.2 – Streaming Responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-13-multi-turn-conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.3 – Multi-Turn Conversation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-14-prompt-engineering-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.4 – Prompt Engineering Fundamentals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 1.4 – Prompt Engineering Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-your-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluate your prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-15-parameter-experimentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.5 – Parameter Experimentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-choose-your-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2 (Choose Your Path)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-option-a-local-model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2 – Option A: Local Model Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2 – Option A: Local Model Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-21-multi-model-speed-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.1 – Multi-Model Speed Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-22-quantization-impact-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.2 – Quantization Impact Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-option-b-cloud-model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2 – Option B: Cloud Model Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2 – Option B: Cloud Model Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-vs-cloud-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local vs Cloud LLMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-21-setting-up-gemini-api-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.1 – Setting Up Gemini API Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-22-local-vs-cloud-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.2 – Local vs Cloud Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-langchain-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3 – LangChain Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3 – LangChain Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-31-langchain-setup-with-ollama-lcel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.1 – LangChain Setup with Ollama (LCEL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-32-conversation-memory-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.2 – Conversation Memory Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-33-structured-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.3 – Structured Output
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 3.3 – Structured Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-331-manual-json-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.3.1 – Manual JSON Prompting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-332-list-output-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.3.2 – List Output Parser
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-333-pydantic-output-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.3.3 – Pydantic Output Parser
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-334-native-structured-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.3.4 – Native Structured Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-34-complex-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.4 – Complex Chains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 3.4 – Complex Chains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-341-sequential-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.4.1 – Sequential Chain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-342-llm-based-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.4.2 – LLM-Based Router
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-35-agents-with-custom-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.5 – Agents with Custom Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-streamlit-chatbot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4 – Streamlit Chatbot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giving-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Giving feedback
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -839,6 +1320,458 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Ollama
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-ollama-direct-api-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1 – Ollama Direct API Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1 – Ollama Direct API Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-11-simple-api-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.1 – Simple API Call
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-12-streaming-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.2 – Streaming Responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-13-multi-turn-conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.3 – Multi-Turn Conversation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-14-prompt-engineering-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.4 – Prompt Engineering Fundamentals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 1.4 – Prompt Engineering Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-your-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluate your prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-15-parameter-experimentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.5 – Parameter Experimentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-choose-your-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2 (Choose Your Path)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-option-a-local-model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2 – Option A: Local Model Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2 – Option A: Local Model Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-21-multi-model-speed-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.1 – Multi-Model Speed Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-22-quantization-impact-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.2 – Quantization Impact Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-option-b-cloud-model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2 – Option B: Cloud Model Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2 – Option B: Cloud Model Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-vs-cloud-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local vs Cloud LLMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-21-setting-up-gemini-api-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.1 – Setting Up Gemini API Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-22-local-vs-cloud-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.2 – Local vs Cloud Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-langchain-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3 – LangChain Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3 – LangChain Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-31-langchain-setup-with-ollama-lcel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.1 – LangChain Setup with Ollama (LCEL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-32-conversation-memory-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.2 – Conversation Memory Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-33-structured-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.3 – Structured Output
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 3.3 – Structured Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-331-manual-json-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.3.1 – Manual JSON Prompting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-332-list-output-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.3.2 – List Output Parser
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-333-pydantic-output-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.3.3 – Pydantic Output Parser
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-334-native-structured-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.3.4 – Native Structured Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-34-complex-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.4 – Complex Chains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 3.4 – Complex Chains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-341-sequential-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.4.1 – Sequential Chain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-342-llm-based-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.4.2 – LLM-Based Router
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-35-agents-with-custom-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.5 – Agents with Custom Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-streamlit-chatbot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4 – Streamlit Chatbot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giving-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Giving feedback
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -862,8 +1795,841 @@
   
 
 
-<h1 id="03-integrating-a-kocal-llm-into-a-python-application">03 - Integrating a Kocal LLM Into a Python Application<a class="headerlink" href="#03-integrating-a-kocal-llm-into-a-python-application" title="Permanent link">¶</a></h1>
-<p>Details will be added shortly.</p>
+<h1 id="03-integrating-a-local-llm-into-a-python-application">03 - Integrating a Local LLM Into a Python Application<a class="headerlink" href="#03-integrating-a-local-llm-into-a-python-application" title="Permanent link">¶</a></h1>
+<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">¶</a></h2>
+<p>The main goal of this laboratory is to learn how to run large language models (LLMs) locally with Ollama, how to call them from Python, and how to build LLM applications with LangChain and Streamlit.</p>
+<p>The structure of this laboratory is as follows:</p>
+<ol>
+<li>Installing Ollama and the required dependencies.</li>
+<li>Ollama Direct API Usage [4 points in total]<ol>
+<li>Simple API call [0.5 point]</li>
+<li>Streaming responses [0.5 point]</li>
+<li>Multi-turn conversation [1 point]</li>
+<li>Prompt engineering fundamentals [1 point]</li>
+<li>Parameter experimentation [1 point]</li>
+</ol>
+</li>
+<li>Choose your path [2 points in total]<ol>
+<li>Option A – Local model comparison<ol>
+<li>Multi-model speed comparison [1 point]</li>
+<li>Quantization impact analysis [1 point]</li>
+</ol>
+</li>
+<li>Option B – Cloud model comparison<ol>
+<li>Setting up Gemini API access [1 point]</li>
+<li>Local vs cloud comparison [1 point]</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>LangChain Integration [12 points in total]<ol>
+<li>LangChain setup with Ollama (LCEL) [1 point]</li>
+<li>Conversation memory strategies [1 point]</li>
+<li>Structured output [2 points in total]<ol>
+<li>Manual JSON prompting [0.5 point]</li>
+<li>List output parser [0.5 point]</li>
+<li>Pydantic output parser [0.5 point]</li>
+<li>Native structured output [0.5 point]</li>
+</ol>
+</li>
+<li>Complex chains [6 points in total]<ol>
+<li>Sequential chain [3 points]</li>
+<li>LLM-based router [3 points]</li>
+</ol>
+</li>
+<li>Agents with custom tools [2 points]</li>
+</ol>
+</li>
+<li>Streamlit Chatbot [2 points]</li>
+<li>Giving feedback [+1 point]</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Grading</p>
+<p>In order to pass this laboratory, you must obtain at least 8 points out of 20.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Screenshot requirement</p>
+<p>At the end of <strong>every</strong> exercise (marked with a <img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> <strong>Screenshot</strong> note), you must take a screenshot of your working solution, including its output, and upload it together with your solution, using the exact filename given in that note (e.g. <code>f1_1.png</code>, <code>f2a_1.png</code>). Solutions missing the required screenshots, or using the wrong filename, will not be accepted.</p>
+<p>If an output does not fit on one screen, split it into several screenshots with a numeric suffix (e.g. <code>f1_4a_1.png</code>, <code>f1_4a_2.png</code>).</p>
+</div>
+<h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">¶</a></h2>
+<p>Don't forget to follow the assignment submission process described under <a href="../../information/github/">GitHub</a> while working on this laboratory.</p>
+<div class="admonition important">
+<p class="admonition-title">Reviewer</p>
+<p>When creating the pull request for this laboratory, assign it to the <code>domonkosadam</code> GitHub user.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Jupyter notebook or plain Python files</p>
+<p>You may solve the exercises either in a Jupyter notebook or in plain <code>.py</code> files, whichever you prefer. The code snippets below build on each other (e.g. the <code>ask()</code> helper of Exercise 1.4), so keep them in one notebook or module. Part 4 is always a separate Streamlit script (<code>chatbot_app.py</code>). Regardless of the format you choose, make sure that <strong>everything</strong> (code, <code>answers.md</code> and the required screenshots) is committed and pushed to your solution branch.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Written answers</p>
+<p>Some exercises contain questions (marked with <img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> <strong>Written answer</strong>). Answer them in a file called <code>answers.md</code> in the root of your repository, under a heading with the exercise number (e.g. <code>## Exercise 1.2</code>). Your feedback at the end of the laboratory also goes into this file (under <code>## Feedback</code>). Make sure <code>answers.md</code> is committed and pushed together with your solution and screenshots.</p>
+</div>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">¶</a></h2>
+<h3 id="installing-ollama">Installing Ollama<a class="headerlink" href="#installing-ollama" title="Permanent link">¶</a></h3>
+<p>Ollama runs large language models locally on your machine.</p>
+<ul>
+<li><strong>macOS:</strong> download the app from <a href="https://ollama.com/download">https://ollama.com/download</a> or run <code>brew install ollama</code></li>
+<li><strong>Linux:</strong> <code>curl -fsSL https://ollama.com/install.sh | sh</code></li>
+<li><strong>Windows:</strong> download the installer from <a href="https://ollama.com/download">https://ollama.com/download</a></li>
+</ul>
+<p>Verify the installation and download the models used in this laboratory (in a terminal):</p>
+<div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>--version
+ollama<span class="w"> </span>pull<span class="w"> </span>llama3.2:3b
+ollama<span class="w"> </span>pull<span class="w"> </span>llama3.2:1b
+ollama<span class="w"> </span>list
+</code></pre></div>
+<h3 id="python-dependencies">Python dependencies<a class="headerlink" href="#python-dependencies" title="Permanent link">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Mandatory</p>
+<p>You need <strong>Python 3.11 – 3.14</strong> on Windows (x64), Linux (x64/arm64) or macOS. On <em>Windows on ARM</em>, install the x64 build of Python (it runs under emulation), because some packages have no native Windows-ARM builds.</p>
+<p>Create a virtual environment and install the pinned dependencies. The requirements file pins the exact version of <strong>every</strong> package, including all indirect dependencies, so everyone gets the same, tested environment. If <code>pip</code> reports success but installed almost nothing (check with <code>pip list</code>), your Python version / platform combination is not supported (see above).</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">          </span><span class="c1"># Windows: .venv\Scripts\activate</span>
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>https://raw.githubusercontent.com/VIAUMSMA001/laboratories/main/docs/laboratories/03-local-llm-integration/requirements.txt
+</code></pre></div>
+</div>
+<p>The main packages in the requirements file are:</p>
+<div class="highlight"><pre><span></span><code>google-genai==2.25.0
+jupyterlab==4.6.4
+langchain==1.4.2
+langchain-core==1.6.5
+langchain-ollama==1.1.0
+langgraph==1.2.12
+matplotlib==3.11.2
+ollama==0.6.2
+pandas==3.0.6
+pydantic==2.13.5
+streamlit==1.64.0
+</code></pre></div>
+<h2 id="part-1-ollama-direct-api-usage">Part 1 – Ollama Direct API Usage<a class="headerlink" href="#part-1-ollama-direct-api-usage" title="Permanent link">¶</a></h2>
+<p>In this section you use the Ollama Python library directly to generate text, stream responses, manage conversations and tune sampling parameters.</p>
+<p><strong>Model for this section:</strong> <code>llama3.2:3b</code> · <strong>Library reference:</strong> <a href="https://github.com/ollama/ollama-python">https://github.com/ollama/ollama-python</a></p>
+<h3 id="exercise-11-simple-api-call">Exercise 1.1 – Simple API Call<a class="headerlink" href="#exercise-11-simple-api-call" title="Permanent link">¶</a></h3>
+<p>Send the prompt to the model with <code>ollama.chat()</code>, then print the prompt, the response text and the wall-clock generation time.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ollama</span>
+
+<span class="n">MODEL</span> <span class="o">=</span> <span class="s2">"llama3.2:3b"</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="s2">"Explain quantum computing in one sentence."</span>
+
+<span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the prompt, the response and the measured generation time, and upload it together with your solution as <code>f1_1.png</code>.</p>
+</div>
+<h3 id="exercise-12-streaming-responses">Exercise 1.2 – Streaming Responses<a class="headerlink" href="#exercise-12-streaming-responses" title="Permanent link">¶</a></h3>
+<p>Streaming displays output while it is generated, which greatly improves the user experience for long answers.</p>
+<p>Stream a response and print the text as it arrives. When it has finished, print:</p>
+<ol>
+<li>an <strong>approximate</strong> token count (words) and tokens/second based on your own wall-clock measurement,</li>
+<li>the <strong>exact</strong> number of generated tokens and the generation speed that Ollama itself reports for the request.</li>
+</ol>
+<p>Then answer the question below.</p>
+<div class="highlight"><pre><span></span><code><span class="n">prompt</span> <span class="o">=</span> <span class="s2">"Write a short poem about artificial intelligence."</span>
+
+<span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the streamed poem together with both the approximate and the exact token counts and speeds, and upload it together with your solution as <code>f1_2.png</code>.</p>
+</div>
+<p><strong>Question:</strong> Why do the two token counts and the two speeds differ?</p>
+<div class="admonition question">
+<p class="admonition-title"><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> Written answer</p>
+<p>Answer this question in <code>answers.md</code>, under the heading <code>## Exercise 1.2</code>.</p>
+</div>
+<h3 id="exercise-13-multi-turn-conversation">Exercise 1.3 – Multi-Turn Conversation<a class="headerlink" href="#exercise-13-multi-turn-conversation" title="Permanent link">¶</a></h3>
+<p>LLM APIs are stateless: to keep context, the conversation history has to be sent with every request.</p>
+<p>For each test input, get a reply that takes the whole conversation into account and print each exchange. At the end, print how many messages the history contains.</p>
+<div class="highlight"><pre><span></span><code><span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"You are a helpful AI assistant that specializes in explaining programming concepts."</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">test_inputs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"What is a variable in Python?"</span><span class="p">,</span>
+    <span class="s2">"Can you give me an example?"</span><span class="p">,</span>
+    <span class="s2">"What about lists?"</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the printed conversation and the number of messages in the history, and upload it together with your solution as <code>f1_3.png</code>.</p>
+</div>
+<h3 id="exercise-14-prompt-engineering-fundamentals">Exercise 1.4 – Prompt Engineering Fundamentals<a class="headerlink" href="#exercise-14-prompt-engineering-fundamentals" title="Permanent link">¶</a></h3>
+<p>Prompt engineering is the craft of writing inputs that get better outputs from LLMs. The same model can produce very different results depending on how you ask.</p>
+<h4 id="key-techniques">Key Techniques<a class="headerlink" href="#key-techniques" title="Permanent link">¶</a></h4>
+<ol>
+<li><strong>Zero-shot vs few-shot:</strong> ask directly, or show labeled examples before the actual task.</li>
+<li><strong>Role prompting:</strong> give the model a role or persona, e.g. <em>"You are an expert Python developer"</em>. Roles belong in the <strong>system</strong> message.</li>
+<li><strong>Chain-of-thought (CoT):</strong> ask the model to reason step by step before answering.</li>
+<li><strong>Output format specification:</strong> explicitly request the format you need (JSON, bullet points, a single word, …).</li>
+<li><strong>Constraint setting:</strong> specify length, tone and level of detail.</li>
+</ol>
+<h4 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">¶</a></h4>
+<ol>
+<li>Implement the helper <code>ask()</code>; you will use it for the rest of Part 1.</li>
+<li>Only the zero-shot prompt is given. <strong>Write the prompts</strong> for Techniques 2–5 yourself.</li>
+<li>In Technique 5 the reply must be parsed with <code>json.loads</code>. Handle the case when the model does not return valid JSON.</li>
+<li>In the next code snippet, measure how much your best prompt improves over zero-shot on a small labeled set.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="n">review</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"The product arrived late and the packaging was damaged, "</span>
+          <span class="s2">"but the item itself works perfectly and exceeded my expectations."</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ask</span><span class="p">(</span><span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">system</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Send `prompt` (with an optional system message) to MODEL and return the reply text.</span>
+
+<span class="sd">    Extra keyword arguments are passed to Ollama as model options, e.g. ask("Hi", temperature=0).</span>
+<span class="sd">    """</span>
+    <span class="c1"># TODO</span>
+    <span class="k">pass</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"TECHNIQUE 1: Zero-shot</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">zero_shot_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"What is the sentiment of this review: </span><span class="si">{</span><span class="n">review</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ask</span><span class="p">(</span><span class="n">zero_shot_prompt</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">TECHNIQUE 2: Few-shot (at least three labeled examples: Positive / Negative / Mixed)</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1"># TODO</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">TECHNIQUE 3: Role prompting (role in the system message)</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1"># TODO</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">TECHNIQUE 4: Chain-of-thought</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1"># TODO</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">TECHNIQUE 5: Structured output</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1"># TODO: request JSON with the keys sentiment, confidence, positive_aspects, negative_aspects,</span>
+<span class="c1">#       then parse it with json.loads and print the parsed dict (or a clear error message).</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the outputs of all five prompting techniques (including the parsed JSON of Technique 5), and upload it together with your solution as <code>f1_4a.png</code>.</p>
+</div>
+<h4 id="evaluate-your-prompt">Evaluate your prompt<a class="headerlink" href="#evaluate-your-prompt" title="Permanent link">¶</a></h4>
+<ol>
+<li>Write <code>extract_label(reply)</code>, which returns the label (one of <code>LABELS</code>) that appears <strong>first</strong> in the reply (case-insensitive), or <code>None</code> if no label appears.</li>
+<li>Write <code>optimized_prompt(review)</code>, combining the techniques above so that the model reliably answers with exactly one label.</li>
+<li>Using <code>temperature=0</code>, evaluate the zero-shot prompt and your optimized prompt on <code>eval_reviews</code>. Print two metrics for each:<ul>
+<li><strong>accuracy</strong>: the extracted label equals the expected label,</li>
+<li><strong>format compliance</strong>: the reply is <em>exactly</em> one of the labels (ignoring case, whitespace and a trailing period), so a program could use it without any parsing.</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">eval_reviews</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"Absolutely love it, works perfectly and shipping was fast."</span><span class="p">,</span> <span class="s2">"Positive"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Broke after two days and support never answered."</span><span class="p">,</span> <span class="s2">"Negative"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Great sound quality, but the battery barely lasts an hour."</span><span class="p">,</span> <span class="s2">"Mixed"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Oh fantastic, another charger that dies after a week. Just what I needed."</span><span class="p">,</span> <span class="s2">"Negative"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Setup was a pain, however once running it is excellent."</span><span class="p">,</span> <span class="s2">"Mixed"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"I was sceptical at first, but it turned out to be exactly what I needed."</span><span class="p">,</span> <span class="s2">"Positive"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"The screen is gorgeous. Shame it overheats within ten minutes."</span><span class="p">,</span> <span class="s2">"Mixed"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Five stars for the packaging, zero for the product inside."</span><span class="p">,</span> <span class="s2">"Negative"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Not the cheapest option, but you get what you pay for - flawless build."</span><span class="p">,</span> <span class="s2">"Positive"</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">LABELS</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"Positive"</span><span class="p">,</span> <span class="s2">"Negative"</span><span class="p">,</span> <span class="s2">"Mixed"</span><span class="p">)</span>
+
+<span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the accuracy and format compliance printed for the zero-shot and for your optimized prompt, and upload it together with your solution as <code>f1_4b.png</code>.</p>
+</div>
+<h3 id="exercise-15-parameter-experimentation">Exercise 1.5 – Parameter Experimentation<a class="headerlink" href="#exercise-15-parameter-experimentation" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>temperature:</strong> controls randomness (0.0 = deterministic, higher = more random)</li>
+<li><strong>top_p:</strong> nucleus sampling – only tokens within cumulative probability <em>p</em> are considered</li>
+<li><strong>top_k:</strong> only the <em>k</em> most likely tokens are considered</li>
+</ul>
+<p>For <strong>every</strong> value below, generate <strong>3</strong> completions of the same prompt (limit the length to ~60 tokens to keep it fast). For <code>top_p</code> and <code>top_k</code> use <code>temperature=1.0</code>. Collect the results in a pandas DataFrame with the columns <code>parameter</code>, <code>value</code>, <code>distinct_outputs</code> (the number of unique completions among the 3, i.e. 1–3) and <code>avg_words</code>, print it, and answer the question below.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">prompt</span> <span class="o">=</span> <span class="s2">"Complete this sentence: The future of AI is..."</span>
+<span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
+<span class="n">top_p_values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+<span class="n">top_k_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+
+<span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the resulting DataFrame of the parameter experiment, and upload it together with your solution as <code>f1_5.png</code>.</p>
+</div>
+<p><strong>Question:</strong> How do temperature, top_p and top_k change the variety of the outputs? Which settings would you use for (a) code generation and (b) creative writing, and why?</p>
+<div class="admonition question">
+<p class="admonition-title"><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> Written answer</p>
+<p>Answer this question in <code>answers.md</code>, under the heading <code>## Exercise 1.5</code>.</p>
+</div>
+<h2 id="part-2-choose-your-path">Part 2 (Choose Your Path)<a class="headerlink" href="#part-2-choose-your-path" title="Permanent link">¶</a></h2>
+<p>Complete <strong>ONE</strong> of the two options (or both, if you are interested):</p>
+<p><strong>Option A: Local Model Comparison</strong> (recommended with good hardware)</p>
+<ul>
+<li><strong>Requirements:</strong> download 4 additional models (~19 GB in total)</li>
+<li><strong>Pros:</strong> no API key needed, works offline, complete privacy</li>
+</ul>
+<p><strong>Option B: Cloud Model Comparison</strong> (recommended with limited hardware/bandwidth)</p>
+<ul>
+<li><strong>Requirements:</strong> a free Google Gemini API key (no credit card)</li>
+<li><strong>Pros:</strong> no large downloads, access to powerful models</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Before submitting</p>
+<p>Remove the code of the option you did not complete. Your solution must run from top to bottom without errors (Jupyter's <em>Run All</em> stops at the first error, so an unfinished option would stop everything after it, including Part 3).</p>
+</div>
+<h2 id="part-2-option-a-local-model-comparison">Part 2 – Option A: Local Model Comparison<a class="headerlink" href="#part-2-option-a-local-model-comparison" title="Permanent link">¶</a></h2>
+<p><strong>Models:</strong> <code>qwen2.5:1.5b</code>, <code>llama3.2:3b</code>, <code>mistral:7b</code>, <code>llama3.1:8b-instruct-q4_0</code>, <code>llama3.1:8b-instruct-q8_0</code></p>
+<div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>pull<span class="w"> </span>qwen2.5:1.5b
+ollama<span class="w"> </span>pull<span class="w"> </span>mistral:7b
+ollama<span class="w"> </span>pull<span class="w"> </span>llama3.1:8b-instruct-q4_0
+ollama<span class="w"> </span>pull<span class="w"> </span>llama3.1:8b-instruct-q8_0
+</code></pre></div>
+<h3 id="exercise-21-multi-model-speed-comparison">Exercise 2.1 – Multi-Model Speed Comparison<a class="headerlink" href="#exercise-21-multi-model-speed-comparison" title="Permanent link">¶</a></h3>
+<p>Run every prompt on every model and collect the results in a DataFrame <code>speed_df</code> with (at least) the columns <code>model</code>, <code>complexity</code>, <code>wall_seconds</code>, <code>load_seconds</code>, <code>output_tokens</code> and <code>tokens_per_sec</code>. Use the timing information Ollama returns with each response, not word counts.</p>
+<p>Then draw a grouped bar chart (matplotlib) of <code>tokens_per_sec</code> per model and complexity, and answer the question.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ollama</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">test_prompts</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"simple"</span><span class="p">:</span> <span class="s2">"What is 2+2?"</span><span class="p">,</span>
+    <span class="s2">"medium"</span><span class="p">:</span> <span class="s2">"Write a Python function to reverse a string."</span><span class="p">,</span>
+    <span class="s2">"complex"</span><span class="p">:</span> <span class="s2">"Explain the concept of recursion with a detailed example in Python."</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"qwen2.5:1.5b"</span><span class="p">,</span> <span class="s2">"llama3.2:3b"</span><span class="p">,</span> <span class="s2">"mistral:7b"</span><span class="p">]</span>
+
+<span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the <code>speed_df</code> DataFrame and the bar chart, and upload it together with your solution as <code>f2a_1.png</code>.</p>
+</div>
+<p><strong>Question:</strong> How does speed scale with model size? Why is the first request to a model often much slower than the following ones?</p>
+<div class="admonition question">
+<p class="admonition-title"><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> Written answer</p>
+<p>Answer this question in <code>answers.md</code>, under the heading <code>## Exercise 2.1 (Option A)</code>.</p>
+</div>
+<h3 id="exercise-22-quantization-impact-analysis">Exercise 2.2 – Quantization Impact Analysis<a class="headerlink" href="#exercise-22-quantization-impact-analysis" title="Permanent link">¶</a></h3>
+<p>Quantization reduces model size and increases speed by storing weights with lower precision (Q4 = 4-bit, Q8 = 8-bit).</p>
+<p>Compare <code>llama3.1:8b-instruct-q4_0</code> and <code>llama3.1:8b-instruct-q8_0</code> on the prompt below. Build a DataFrame with the size on disk (GB, from Ollama's model list), the quantization level reported by Ollama, tokens/second, and the response. Read both responses and answer the question.</p>
+<div class="highlight"><pre><span></span><code><span class="n">test_prompt</span> <span class="o">=</span> <span class="s2">"Write a professional email requesting a meeting to discuss a project proposal."</span>
+<span class="n">quant_models</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"llama3.1:8b-instruct-q4_0"</span><span class="p">,</span> <span class="s2">"llama3.1:8b-instruct-q8_0"</span><span class="p">]</span>
+
+<span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the quantization DataFrame and the beginning of both responses, and upload it together with your solution as <code>f2a_2.png</code>.</p>
+</div>
+<p><strong>Question:</strong> Did you notice a quality difference between Q4 and Q8? Which one would you deploy on a laptop with 16 GB RAM, and why?</p>
+<div class="admonition question">
+<p class="admonition-title"><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> Written answer</p>
+<p>Answer this question in <code>answers.md</code>, under the heading <code>## Exercise 2.2 (Option A)</code>.</p>
+</div>
+<h2 id="part-2-option-b-cloud-model-comparison">Part 2 – Option B: Cloud Model Comparison<a class="headerlink" href="#part-2-option-b-cloud-model-comparison" title="Permanent link">¶</a></h2>
+<p><strong>Requirements:</strong> a free Google Gemini API key and an internet connection.</p>
+<p>In this section you call Google's Gemini API through the official <strong><code>google-genai</code></strong> SDK (the older <code>google-generativeai</code> package is no longer supported) and compare it with your local model.</p>
+<h3 id="local-vs-cloud-llms">Local vs Cloud LLMs<a class="headerlink" href="#local-vs-cloud-llms" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Local LLMs (Ollama)</th>
+<th>Cloud LLMs (Gemini, GPT, Claude)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Where the model runs</td>
+<td>your hardware (CPU/GPU)</td>
+<td>the provider's servers</td>
+</tr>
+<tr>
+<td>Internet</td>
+<td>not needed after download</td>
+<td>required</td>
+</tr>
+<tr>
+<td>Data privacy</td>
+<td>data never leaves your machine</td>
+<td>data is sent to the provider</td>
+</tr>
+<tr>
+<td>Infrastructure</td>
+<td>you manage it</td>
+<td>the provider manages it</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exercise-21-setting-up-gemini-api-access">Exercise 2.1 – Setting Up Gemini API Access<a class="headerlink" href="#exercise-21-setting-up-gemini-api-access" title="Permanent link">¶</a></h3>
+<ol>
+<li>Visit <a href="https://aistudio.google.com/app/apikey">https://aistudio.google.com/app/apikey</a> and sign in with your Google account.</li>
+<li>Click <strong>Create API key</strong> and copy the key.</li>
+<li>Make the key available as the environment variable <code>GEMINI_API_KEY</code> <strong>before starting Jupyter or your Python script</strong> (e.g. <code>export GEMINI_API_KEY=...</code> on macOS/Linux, <code>setx GEMINI_API_KEY ...</code> on Windows, then open a new terminal).</li>
+</ol>
+<p>The free tier is rate limited; check the current limits in AI Studio. Never commit or submit your API key.</p>
+<p><strong>Model:</strong> use <code>gemini-3.8-flash</code> (the current stable Flash model, available on the free tier; checked in September 2026). Gemini models are retired regularly: older ids such as <code>gemini-1.5-flash</code> or <code>gemini-2.0-flash</code> no longer exist, and <code>gemini-2.5-flash</code> is only available to accounts that used it before. If a call fails with <strong>404 / NOT_FOUND</strong>, the model id is not available to your key: pick a current Flash model from the list you print in step 2 (current models: <a href="https://ai.google.dev/gemini-api/docs/models">https://ai.google.dev/gemini-api/docs/models</a>).</p>
+<p><strong>Task:</strong> Using the SDK documentation (<a href="https://googleapis.github.io/python-genai/">https://googleapis.github.io/python-genai/</a>):</p>
+<ol>
+<li>Create a client that reads the key from the environment variable.</li>
+<li>Print the names of the models available to your key that support content generation, and check that <code>GEMINI_MODEL</code> is among them.</li>
+<li>Test the connection.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">google</span><span class="w"> </span><span class="kn">import</span> <span class="n">genai</span>
+
+<span class="n">GEMINI_MODEL</span> <span class="o">=</span> <span class="s2">"gemini-3.8-flash"</span>
+
+<span class="c1"># TODO</span>
+<span class="n">client</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">generate_content</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">GEMINI_MODEL</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="s2">"Say 'Gemini is connected!' and nothing else."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the printed list of available models and the successful connection test, and upload it together with your solution as <code>f2b_1.png</code>. <strong>Make sure that your API key is not visible on the screenshot!</strong></p>
+</div>
+<h3 id="exercise-22-local-vs-cloud-comparison">Exercise 2.2 – Local vs Cloud Comparison<a class="headerlink" href="#exercise-22-local-vs-cloud-comparison" title="Permanent link">¶</a></h3>
+<p>Run every test prompt on the local model (<code>llama3.2:3b</code>) and on your Gemini model. Collect a DataFrame with the columns <code>category</code>, <code>local_seconds</code>, <code>cloud_seconds</code>, <code>local_tokens</code>, <code>cloud_tokens</code>, <code>cloud_thinking_tokens</code> (use the token counts reported by each API; Gemini Flash models may "think" before answering, and those hidden tokens are reported separately, count towards the latency and are billed as output), <code>local_response</code>, <code>cloud_response</code>, and two columns <code>local_quality</code> / <code>cloud_quality</code> in which <strong>you</strong> rate each answer from 1 to 5 against the <code>expected</code> value.</p>
+<p>Then answer the question below.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ollama</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">MODEL</span> <span class="o">=</span> <span class="s2">"llama3.2:3b"</span>
+
+<span class="n">test_prompts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Factual"</span><span class="p">,</span> <span class="s2">"prompt"</span><span class="p">:</span> <span class="s2">"What is the capital of Australia and what is its population?"</span><span class="p">,</span> <span class="s2">"expected"</span><span class="p">:</span> <span class="s2">"Canberra, ~460,000"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Creative"</span><span class="p">,</span> <span class="s2">"prompt"</span><span class="p">:</span> <span class="s2">"Write a haiku about artificial intelligence."</span><span class="p">,</span> <span class="s2">"expected"</span><span class="p">:</span> <span class="s2">"3 lines, 5-7-5 syllables"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Code"</span><span class="p">,</span> <span class="s2">"prompt"</span><span class="p">:</span> <span class="s2">"Write a Python function that checks if a string is a palindrome. Include comments."</span><span class="p">,</span> <span class="s2">"expected"</span><span class="p">:</span> <span class="s2">"Correct function with comments"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Reasoning"</span><span class="p">,</span> <span class="s2">"prompt"</span><span class="p">:</span> <span class="s2">"Two trains are 800 miles apart and travel towards each other at 60 mph and 80 mph. When do they meet?"</span><span class="p">,</span> <span class="s2">"expected"</span><span class="p">:</span> <span class="s2">"after ~5 hours 43 minutes"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Summarization"</span><span class="p">,</span> <span class="s2">"prompt"</span><span class="p">:</span> <span class="s2">"Summarize this in 2 sentences: Machine learning is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed. It focuses on developing algorithms that can access data and use it to learn for themselves."</span><span class="p">,</span> <span class="s2">"expected"</span><span class="p">:</span> <span class="s2">"2 clear sentences"</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the comparison DataFrame including your quality ratings, and upload it together with your solution as <code>f2b_2.png</code>.</p>
+</div>
+<p><strong>Question:</strong> For which kinds of tasks is the local model good enough? When would you pay for a cloud API instead? Consider speed, quality, privacy and cost.</p>
+<div class="admonition question">
+<p class="admonition-title"><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> Written answer</p>
+<p>Answer this question in <code>answers.md</code>, under the heading <code>## Exercise 2.2 (Option B)</code>.</p>
+</div>
+<h2 id="part-3-langchain-integration">Part 3 – LangChain Integration<a class="headerlink" href="#part-3-langchain-integration" title="Permanent link">¶</a></h2>
+<p>LangChain is a framework for building applications with language models. This lab uses <strong>LangChain 1.x</strong>:</p>
+<ul>
+<li><strong>LCEL</strong> (LangChain Expression Language): prompts, models and parsers are <em>runnables</em> that you compose with <code>|</code></li>
+<li><strong>Agents</strong> (<code>create_agent</code>): a model that can call tools, with state and memory handled by <strong>LangGraph</strong> checkpointers and customized with <strong>middleware</strong></li>
+</ul>
+<p>Many tutorials online still use pre-1.0 APIs (<code>LLMChain</code>, <code>ConversationChain</code>, <code>ConversationBufferMemory</code>, <code>langchain.hub</code>, <code>AgentExecutor</code>, …). These were removed from <code>langchain</code> 1.x and <strong>must not be used</strong> in this lab (neither through the legacy <code>langchain_classic</code> package).</p>
+<p><strong>Model for this section:</strong> <code>llama3.2:3b</code> · <strong>Documentation:</strong> <a href="https://docs.langchain.com/oss/python/langchain/overview">https://docs.langchain.com/oss/python/langchain/overview</a></p>
+<h3 id="exercise-31-langchain-setup-with-ollama-lcel">Exercise 3.1 – LangChain Setup with Ollama (LCEL)<a class="headerlink" href="#exercise-31-langchain-setup-with-ollama-lcel" title="Permanent link">¶</a></h3>
+<ol>
+<li>Create a LangChain chat model for <code>llama3.2:3b</code>.</li>
+<li>Build <code>chain</code> with LCEL from a prompt template with the text <code>You are a {role}. {task}</code>, the model and an output parser, so that <code>chain.invoke()</code> returns a plain <strong>string</strong>.</li>
+<li>Stream the output of the same chain token by token.</li>
+<li>Run the chain on two different inputs <strong>in parallel</strong> with a single call.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_ollama</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatOllama</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.prompts</span><span class="w"> </span><span class="kn">import</span> <span class="n">PromptTemplate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.output_parsers</span><span class="w"> </span><span class="kn">import</span> <span class="n">StrOutputParser</span>
+
+<span class="c1"># TODO: 1-2</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">chain</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"helpful coding tutor"</span><span class="p">,</span> <span class="s2">"task"</span><span class="p">:</span> <span class="s2">"Explain what a Python decorator is in simple terms."</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Is a string: </span><span class="si">{</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="nb">str</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># TODO: 3 - stream {"role": "poet", "task": "Write a two-line poem about Python."}</span>
+
+<span class="c1"># TODO: 4 - two inputs in a single call</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the type check, the invoked answer, the streamed output and the two batched answers, and upload it together with your solution as <code>f3_1.png</code>.</p>
+</div>
+<h3 id="exercise-32-conversation-memory-strategies">Exercise 3.2 – Conversation Memory Strategies<a class="headerlink" href="#exercise-32-conversation-memory-strategies" title="Permanent link">¶</a></h3>
+<p>Common strategies for conversation memory:</p>
+<ul>
+<li><strong>Buffer:</strong> keep every message</li>
+<li><strong>Window:</strong> keep only the last <em>k</em> messages</li>
+<li><strong>Summary:</strong> replace older messages with an LLM-written summary</li>
+</ul>
+<p>In LangChain 1.x, conversation memory is the <strong>state of an agent</strong>. A <strong>checkpointer</strong> stores it per <code>thread_id</code>, and <strong>middleware</strong> can modify the messages before each model call. Read <a href="https://docs.langchain.com/oss/python/langchain/short-term-memory">https://docs.langchain.com/oss/python/langchain/short-term-memory</a>.</p>
+<p><strong>Tasks:</strong></p>
+<ol>
+<li>Write <code>run_conversation(agent, thread_id)</code>, which sends the test messages one by one in the same thread and prints every exchange.</li>
+<li>Build three agents (no tools needed), each with its own in-memory checkpointer:<ul>
+<li><code>buffer_agent</code>: keeps all messages,</li>
+<li><code>window_agent</code>: your own <code>@before_model</code> middleware that keeps only the <strong>3 most recent</strong> messages,</li>
+<li><code>summary_agent</code>: the built-in summarization middleware, summarizing once there are more than 3 messages and keeping the most recent message.</li>
+</ul>
+</li>
+<li>Run the conversation with all three agents. Then print the message list stored in the summary agent's thread (<code>summary_agent.get_state(config)</code>) and read the summary it contains.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_ollama</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatOllama</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain.agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_agent</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain.agents.middleware</span><span class="w"> </span><span class="kn">import</span> <span class="n">before_model</span><span class="p">,</span> <span class="n">SummarizationMiddleware</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.messages</span><span class="w"> </span><span class="kn">import</span> <span class="n">RemoveMessage</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langgraph.checkpoint.memory</span><span class="w"> </span><span class="kn">import</span> <span class="n">InMemorySaver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langgraph.graph.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">REMOVE_ALL_MESSAGES</span>
+
+<span class="n">llm</span> <span class="o">=</span> <span class="n">ChatOllama</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">"llama3.2:3b"</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">test_messages</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"My name is Alice and I'm learning Python."</span><span class="p">,</span>
+    <span class="s2">"What are some good resources for beginners? Answer briefly."</span><span class="p">,</span>
+    <span class="s2">"Can you remind me what my name is?"</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the three conversations (buffer, window, summary) and the messages stored in the summary agent's thread, and upload it together with your solution as <code>f3_2.png</code>.</p>
+</div>
+<p><strong>Question:</strong> Which agents remembered the name, and why? What did the summary contain, and what does that tell you about summary memory with a small model? What are the trade-offs of the three strategies for long conversations (context length, cost, information loss)?</p>
+<div class="admonition question">
+<p class="admonition-title"><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> Written answer</p>
+<p>Answer this question in <code>answers.md</code>, under the heading <code>## Exercise 3.2</code>.</p>
+</div>
+<h3 id="exercise-33-structured-output">Exercise 3.3 – Structured Output<a class="headerlink" href="#exercise-33-structured-output" title="Permanent link">¶</a></h3>
+<p>Applications often need structured data (JSON, lists, typed objects) instead of free text. Without special techniques you get inconsistent formats, extra explanatory text and parsing errors.</p>
+<p><strong>Example problem:</strong>
+</p><div class="highlight"><pre><span></span><code>You ask:  "Extract the person's name, age and city from this text"
+LLM says: "Based on the text, the person's name is John Smith, he is 35 years old and lives in New York City."
+You want: {"name": "John Smith", "age": 35, "city": "New York City"}
+</code></pre></div><p></p>
+<p>Techniques you compare in this exercise:</p>
+<ol>
+<li><strong>Manual prompting</strong> for JSON and parsing it yourself</li>
+<li><strong>Output parsers</strong> (<code>langchain_core.output_parsers</code>): the parser adds format instructions to the prompt and parses the reply</li>
+<li><strong>Pydantic output parser</strong>: parses into a validated Pydantic model</li>
+<li><strong>Native structured output</strong> (<code>with_structured_output</code>): the schema is passed to the model/runtime itself (Ollama constrains the generation to the JSON schema)</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Literal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_ollama</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatOllama</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.prompts</span><span class="w"> </span><span class="kn">import</span> <span class="n">PromptTemplate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.output_parsers</span><span class="w"> </span><span class="kn">import</span> <span class="n">CommaSeparatedListOutputParser</span><span class="p">,</span> <span class="n">PydanticOutputParser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">OutputParserException</span>
+
+<span class="n">sample_text</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">Customer Review:</span>
+<span class="s2">I recently purchased the TechPro X15 laptop from your store.</span>
+<span class="s2">The customer service representative, Sarah Johnson, was extremely helpful.</span>
+<span class="s2">I bought it on January 15, 2024 for $1,299.99.</span>
+<span class="s2">Overall rating: 4.5 out of 5 stars.</span>
+<span class="s2">Main issues: Battery life could be better, keyboard is a bit loud.</span>
+<span class="s2">Positives: Fast processor, beautiful display, lightweight design.</span>
+<span class="s2">"""</span>
+
+<span class="n">llm</span> <span class="o">=</span> <span class="n">ChatOllama</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">"llama3.2:3b"</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># For the reliability experiments in 3.3.3 and 3.3.4: sampling (temperature &gt; 0) makes repeated runs differ</span>
+<span class="n">RELIABILITY_MODELS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"llama3.2:3b"</span><span class="p">,</span> <span class="s2">"llama3.2:1b"</span><span class="p">]</span>
+<span class="n">RUNS</span> <span class="o">=</span> <span class="mi">5</span>
+</code></pre></div>
+<h4 id="exercise-331-manual-json-prompting">Exercise 3.3.1 – Manual JSON Prompting<a class="headerlink" href="#exercise-331-manual-json-prompting" title="Permanent link">¶</a></h4>
+<p>Write a prompt that makes the model return <strong>only</strong> JSON with the fields <code>product_name</code> (string), <code>employee_name</code> (string), <code>purchase_date</code> (string), <code>price</code> (number), <code>rating</code> (number), <code>issues</code> (list of strings) and <code>positives</code> (list of strings). Call the model and parse the reply with <code>json.loads</code>. Your parsing must also cope with replies wrapped in Markdown code fences. Print the raw reply and the parsed dict (or the error).</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the raw reply and the parsed JSON (or the parsing error), and upload it together with your solution as <code>f3_3_1.png</code>.</p>
+</div>
+<h4 id="exercise-332-list-output-parser">Exercise 3.3.2 – List Output Parser<a class="headerlink" href="#exercise-332-list-output-parser" title="Permanent link">¶</a></h4>
+<p>Build <code>list_chain</code>: a prompt (including the parser's format instructions) → model → <code>CommaSeparatedListOutputParser</code>, which returns a Python <strong>list</strong> of the positive aspects of the review.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># TODO</span>
+<span class="n">list_chain</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">parsed_list</span> <span class="o">=</span> <span class="n">list_chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">"review"</span><span class="p">:</span> <span class="n">sample_text</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">parsed_list</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">parsed_list</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the parsed Python list, and upload it together with your solution as <code>f3_3_2.png</code>.</p>
+</div>
+<h4 id="exercise-333-pydantic-output-parser">Exercise 3.3.3 – Pydantic Output Parser<a class="headerlink" href="#exercise-333-pydantic-output-parser" title="Permanent link">¶</a></h4>
+<ol>
+<li>Define a Pydantic model <code>CustomerReview</code> with the fields of 3.3.1 <strong>plus</strong> <code>sentiment</code>, which may only be <code>"positive"</code>, <code>"negative"</code> or <code>"mixed"</code>. Give every field a description.</li>
+<li>Build a chain <em>prompt with format instructions → model → <code>PydanticOutputParser</code></em>.</li>
+<li>Reliability experiment: for each model in <code>RELIABILITY_MODELS</code>, use <code>ChatOllama(model=..., temperature=0.8)</code> and run the chain <code>RUNS</code> times. Count how many runs produced a valid <code>CustomerReview</code> (failed runs raise <code>OutputParserException</code>) and store the counts in a dict <code>parser_successes = {model: count}</code>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the individual runs and the success counts per model, and upload it together with your solution as <code>f3_3_3.png</code>.</p>
+</div>
+<h4 id="exercise-334-native-structured-output">Exercise 3.3.4 – Native Structured Output<a class="headerlink" href="#exercise-334-native-structured-output" title="Permanent link">¶</a></h4>
+<p>Repeat the reliability experiment of 3.3.3 with the chat model's <code>with_structured_output()</code> and the <strong>same</strong> <code>CustomerReview</code> model (same models, temperature and number of runs). Store the counts in <code>native_successes = {model: count}</code> and print both dicts.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the individual runs and both success-count dictionaries, and upload it together with your solution as <code>f3_3_4.png</code>.</p>
+</div>
+<p><strong>Question:</strong> Which technique was more reliable, and how did the model size change the result? What does the model actually receive in 3.3.3 compared to 3.3.4, and why does that make a difference?</p>
+<div class="admonition question">
+<p class="admonition-title"><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> Written answer</p>
+<p>Answer this question in <code>answers.md</code>, under the heading <code>## Exercise 3.3</code>.</p>
+</div>
+<h3 id="exercise-34-complex-chains">Exercise 3.4 – Complex Chains<a class="headerlink" href="#exercise-34-complex-chains" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Sequential chains:</strong> execute steps in order, passing the output of one step to the next</li>
+<li><strong>Routers:</strong> send inputs to different chains depending on their content</li>
+</ul>
+<h4 id="exercise-341-sequential-chain">Exercise 3.4.1 – Sequential Chain<a class="headerlink" href="#exercise-341-sequential-chain" title="Permanent link">¶</a></h4>
+<p>Build <code>sequential_chain</code>: <strong>outline → expand → summarize</strong>.</p>
+<ul>
+<li>Write all three prompts yourself (3-point outline of an essay about <code>{topic}</code>; expand the outline into short paragraphs; summarize the expanded text in 2 sentences).</li>
+<li><code>sequential_chain.invoke({"topic": ...})</code> must return a dict that contains the original <code>topic</code> <strong>and every intermediate result</strong> (<code>outline</code>, <code>expanded</code>, <code>summary</code>), all as plain strings.</li>
+<li>It must be a single LCEL runnable (hint: look at <code>RunnablePassthrough.assign</code>).</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_ollama</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatOllama</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.prompts</span><span class="w"> </span><span class="kn">import</span> <span class="n">PromptTemplate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.output_parsers</span><span class="w"> </span><span class="kn">import</span> <span class="n">StrOutputParser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.runnables</span><span class="w"> </span><span class="kn">import</span> <span class="n">RunnablePassthrough</span>
+
+<span class="n">llm</span> <span class="o">=</span> <span class="n">ChatOllama</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">"llama3.2:3b"</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="c1"># TODO</span>
+<span class="n">sequential_chain</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">sequential_chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">"topic"</span><span class="p">:</span> <span class="s2">"The impact of AI on education"</span><span class="p">})</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"outline"</span><span class="p">,</span> <span class="s2">"expanded"</span><span class="p">,</span> <span class="s2">"summary"</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"===== </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">())</span><span class="si">}</span><span class="s2"> words) =====</span><span class="se">\n</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the outline, the expanded text and the summary with their word counts, and upload it together with your solution as <code>f3_4_1.png</code>.</p>
+</div>
+<h4 id="exercise-342-llm-based-router">Exercise 3.4.2 – LLM-Based Router<a class="headerlink" href="#exercise-342-llm-based-router" title="Permanent link">¶</a></h4>
+<p>A keyword-based router (e.g. <em>"contains 'calculate' → math"</em>) is brittle: <em>"How do I compute the average of a list in Python?"</em> contains a math word but is a coding question.</p>
+<p>Build a router in which <strong>the LLM decides</strong> the route:</p>
+<ol>
+<li>A classifier that returns exactly one of <code>"math"</code>, <code>"code"</code>, <code>"general"</code>. Use structured output so the route is guaranteed to be valid.</li>
+<li>Three specialized chains (math tutor step by step; programming expert with code; concise general answer). Write the prompts yourself.</li>
+<li><code>router_chain</code>: a single runnable that takes <code>{"question": ...}</code> and returns <code>{"route": ..., "answer": ...}</code>.</li>
+<li>Run the test questions, print the route next to the <strong>expected</strong> route, and print the routing accuracy.</li>
+</ol>
+<p>A 3B model will not route every question correctly; the last test question is deliberately hard. You are graded on the implementation and on your analysis below, not on reaching 100%.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_ollama</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatOllama</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.prompts</span><span class="w"> </span><span class="kn">import</span> <span class="n">PromptTemplate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.output_parsers</span><span class="w"> </span><span class="kn">import</span> <span class="n">StrOutputParser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.runnables</span><span class="w"> </span><span class="kn">import</span> <span class="n">RunnableLambda</span><span class="p">,</span> <span class="n">RunnablePassthrough</span>
+
+<span class="n">test_questions</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># (question, expected route)</span>
+    <span class="p">(</span><span class="s2">"Calculate the area of a circle with radius 5"</span><span class="p">,</span> <span class="s2">"math"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Write a Python function to sort a list"</span><span class="p">,</span> <span class="s2">"code"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"What is the capital of France?"</span><span class="p">,</span> <span class="s2">"general"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"How do I compute the average of a list in Python?"</span><span class="p">,</span> <span class="s2">"code"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Why is the sky blue?"</span><span class="p">,</span> <span class="s2">"general"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"If I save 50 euros a month, how long until I have 1000 euros?"</span><span class="p">,</span> <span class="s2">"math"</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1"># TODO</span>
+<span class="n">router_chain</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the route, the expected route and the (shortened) answer of every test question, and the routing accuracy, and upload it together with your solution as <code>f3_4_2.png</code>.</p>
+</div>
+<p><strong>Question:</strong> Which questions were misrouted, and why do you think the model got them wrong? Name two ways to make the routing more reliable.</p>
+<div class="admonition question">
+<p class="admonition-title"><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> Written answer</p>
+<p>Answer this question in <code>answers.md</code>, under the heading <code>## Exercise 3.4.2</code>.</p>
+</div>
+<h3 id="exercise-35-agents-with-custom-tools">Exercise 3.5 – Agents with Custom Tools<a class="headerlink" href="#exercise-35-agents-with-custom-tools" title="Permanent link">¶</a></h3>
+<p>Agents decide dynamically which tools to call. In LangChain 1.x you create one with <code>create_agent()</code> and turn Python functions into tools with the <code>@tool</code> decorator. The <strong>docstring</strong> and the <strong>type hints</strong> become the tool description the model sees. <code>llama3.2:3b</code> supports native tool calling.</p>
+<p><strong>Tasks:</strong></p>
+<ol>
+<li>Implement the tools:<ul>
+<li><code>calculator(expression)</code>: evaluates arithmetic expressions. <strong>Do not</strong> pass arbitrary input to <code>eval()</code>; e.g. evaluate a parsed <code>ast</code> tree with only arithmetic operators allowed. It must also return an error message instead of hanging on inputs such as <code>9**9**9</code> (the model decides what the tool receives!).</li>
+<li><code>get_current_time()</code>: current date and time,</li>
+<li><code>reverse_string(text)</code>,</li>
+<li><strong>one more tool of your own choice</strong>, plus a test query for it.</li>
+</ul>
+</li>
+<li>Call your <code>calculator</code> tool directly with the expression <code>9**9**9</code> and print the result (it must be an error message, returned quickly).</li>
+<li>Create <code>agent</code> with a system prompt.</li>
+<li>For every query print the <strong>names of the tools that were called</strong> and the final answer.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_ollama</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatOllama</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain.agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_agent</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">tool</span>
+
+<span class="n">llm</span> <span class="o">=</span> <span class="n">ChatOllama</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">"llama3.2:3b"</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">test_queries</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"What is 15</span><span class="si">% o</span><span class="s2">f 200?"</span><span class="p">,</span>
+    <span class="s2">"What is the current time?"</span><span class="p">,</span>
+    <span class="s2">"Reverse the string 'Hello World'"</span><span class="p">,</span>
+    <span class="s2">"What is today's date, and what is 365 divided by 7?"</span><span class="p">,</span>
+    <span class="c1"># TODO: add a query for your own tool</span>
+<span class="p">]</span>
+
+<span class="c1"># TODO</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the result of calling your calculator tool directly with <code>9**9**9</code>, and the tools called and the final answer for every test query (including the query for your own tool), and upload it together with your solution as <code>f3_5.png</code>.</p>
+</div>
+<h2 id="part-4-streamlit-chatbot">Part 4 – Streamlit Chatbot<a class="headerlink" href="#part-4-streamlit-chatbot" title="Permanent link">¶</a></h2>
+<p><strong>Goal:</strong> build a working chatbot application with Streamlit on top of Ollama. Create <code>chatbot_app.py</code> from the skeleton below. It contains the page layout and the sidebar controls; the chat logic is up to you:</p>
+<ol>
+<li>Offer the <strong>installed</strong> Ollama chat models in the model selector (embedding models such as <code>nomic-embed-text</code> must not appear).</li>
+<li><strong>Stream</strong> the assistant's answer token by token into the page, using the temperature and max-token settings from the sidebar, and show below the answer how long the generation took.</li>
+<li>Keep and display the conversation history across reruns.</li>
+<li>The system prompt from the sidebar must take effect even if it is changed in the middle of a conversation.</li>
+</ol>
+<p>Run it with:
+</p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>streamlit<span class="w"> </span>run<span class="w"> </span>chatbot_app.py
+</code></pre></div><p></p>
+<div class="highlight"><span class="filename">chatbot_app.py</span><pre><span></span><code><span class="sd">"""</span>
+<span class="sd">Local LLM Chatbot - Part 4</span>
+<span class="sd">==========================</span>
+<span class="sd">Run: python -m streamlit run chatbot_app.py</span>
+
+<span class="sd">Requirements (see the laboratory description):</span>
+<span class="sd">1. Offer the installed Ollama chat models in the model selector (no embedding models).</span>
+<span class="sd">2. Stream the assistant's answer token by token, using the temperature and max-token settings,</span>
+<span class="sd">   and show below the answer how long the generation took.</span>
+<span class="sd">3. Keep and display the conversation history across reruns.</span>
+<span class="sd">4. A changed system prompt must take effect even in the middle of a conversation.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">ollama</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">streamlit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">st</span>
+
+<span class="c1"># ==================== PAGE CONFIGURATION ====================</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span>
+    <span class="n">page_title</span><span class="o">=</span><span class="s2">"Local LLM Chatbot"</span><span class="p">,</span>
+    <span class="n">page_icon</span><span class="o">=</span><span class="s2">"🤖"</span><span class="p">,</span>
+    <span class="n">layout</span><span class="o">=</span><span class="s2">"wide"</span><span class="p">,</span>
+    <span class="n">initial_sidebar_state</span><span class="o">=</span><span class="s2">"expanded"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># ==================== HELPER FUNCTIONS ====================</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">list_chat_models</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Return the names of the installed Ollama chat models (embedding models excluded)."""</span>
+    <span class="c1"># TODO 1</span>
+    <span class="k">return</span> <span class="p">[]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">stream_response</span><span class="p">(</span><span class="n">model_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">max_tokens</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Generator that yields the assistant's answer piece by piece."""</span>
+    <span class="c1"># TODO 2</span>
+    <span class="k">yield</span> <span class="s2">""</span>
+
+
+<span class="c1"># ==================== SIDEBAR CONFIGURATION ====================</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">"⚙️ Configuration"</span><span class="p">)</span>
+
+<span class="n">available_models</span> <span class="o">=</span> <span class="n">list_chat_models</span><span class="p">()</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">available_models</span><span class="p">:</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">"No chat models found. Is Ollama running, and did you pull a model (ollama pull llama3.2:3b)?"</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+<span class="n">DEFAULT_MODEL</span> <span class="o">=</span> <span class="s2">"llama3.2:3b"</span>
+<span class="n">selected_model</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+    <span class="s2">"Select Model"</span><span class="p">,</span>
+    <span class="n">available_models</span><span class="p">,</span>
+    <span class="n">index</span><span class="o">=</span><span class="n">available_models</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">DEFAULT_MODEL</span><span class="p">)</span> <span class="k">if</span> <span class="n">DEFAULT_MODEL</span> <span class="ow">in</span> <span class="n">available_models</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">"Choose which local model to use"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">temperature</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+    <span class="s2">"Temperature"</span><span class="p">,</span> <span class="n">min_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">max_value</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">"Controls randomness: 0.0 = focused, 2.0 = creative"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">max_tokens</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+    <span class="s2">"Max Tokens"</span><span class="p">,</span> <span class="n">min_value</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">max_value</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">"Maximum length of response"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">expander</span><span class="p">(</span><span class="s2">"🎭 System Prompt (Advanced)"</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">system_prompt</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_area</span><span class="p">(</span>
+        <span class="s2">"Custom System Prompt"</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">"You are a helpful AI assistant."</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"Define the chatbot's personality"</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="s2">"---"</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="s2">"### Current Settings"</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"**Model:** `</span><span class="si">{</span><span class="n">selected_model</span><span class="si">}</span><span class="s2">`"</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"**Temperature:** `</span><span class="si">{</span><span class="n">temperature</span><span class="si">}</span><span class="s2">`"</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"**Max Tokens:** `</span><span class="si">{</span><span class="n">max_tokens</span><span class="si">}</span><span class="s2">`"</span><span class="p">)</span>
+
+<span class="c1"># ==================== MAIN APPLICATION ====================</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"🤖 Local LLM Chatbot"</span><span class="p">)</span>
+
+<span class="c1"># TODO 3: conversation state and history display</span>
+
+<span class="c1"># TODO 4: handle new user input (show it, stream the answer, show the generation time, store both messages)</span>
+
+<span class="c1"># ==================== SIDEBAR CONTROLS ====================</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="s2">"---"</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="s2">"### 🛠️ Controls"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s2">"🗑️ Clear Chat"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">"stretch"</span><span class="p">):</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">messages</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">rerun</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s2">"💾 Export Chat"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">"stretch"</span><span class="p">):</span>
+    <span class="n">export_text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Chat Export - </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S'</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">export_text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"Model: </span><span class="si">{</span><span class="n">selected_model</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">export_text</span> <span class="o">+=</span> <span class="s2">"="</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span>
+    <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"messages"</span><span class="p">,</span> <span class="p">[]):</span>
+        <span class="k">if</span> <span class="n">msg</span><span class="p">[</span><span class="s2">"role"</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">"system"</span><span class="p">:</span>
+            <span class="n">export_text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">msg</span><span class="p">[</span><span class="s1">'role'</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">msg</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">"</span>
+
+    <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">download_button</span><span class="p">(</span>
+        <span class="s2">"📥 Download"</span><span class="p">,</span>
+        <span class="n">export_text</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"chat_</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y%m</span><span class="si">%d</span><span class="s1">_%H%M%S'</span><span class="p">)</span><span class="si">}</span><span class="s2">.txt"</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="s2">"stretch"</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the running chatbot in the browser, showing a conversation of at least two turns in which the model remembers something from an earlier turn, the generation time of the latest answer, and the sidebar (selected model and settings), and upload it together with your solution as <code>f4.png</code>.</p>
+</div>
+<h2 id="giving-feedback">Giving feedback<a class="headerlink" href="#giving-feedback" title="Permanent link">¶</a></h2>
+<p>Please share your opinion about this laboratory in <code>answers.md</code>, under the heading <code>## Feedback</code>. You can include:</p>
+<ul>
+<li>Your general impression of the laboratory.</li>
+<li>The things you liked or did not like.</li>
+<li>Whether you found the lab easy or difficult.</li>
+<li>Which exercises you enjoyed the most.</li>
+<li>What was necessary but not included in this laboratory.</li>
+<li>What was unnecessary but included in this laboratory.</li>
+</ul>
   <hr>
   <div class="md-source-file">
     <span class="md-source-file__fact"> <span class="md-icon" title="Last update"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -871,8 +2637,8 @@
           </path>
         </svg>
       </span>
-      <span title="2026. szeptember 18. 13:34:24">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. szeptember 18. 13:34:24 CEST"><span class="timeago" datetime="2026-09-18T13:34:24+02:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. szeptember 18. 13:34:24 CEST">2026-09-18</span>
+      <span title="2026. szeptember 30. 20:52:07">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. szeptember 30. 20:52:07 CEST"><span class="timeago" datetime="2026-09-30T20:52:07+02:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. szeptember 30. 20:52:07 CEST">2026-09-30</span>
       </span>
     </span>
 

@@ -619,7 +619,7 @@
   <span class="md-ellipsis">
     
   
-    03 - Integrating a Kocal LLM Into a Python Application
+    03 - Integrating a Local LLM Into a Python Application
   
 
     
@@ -705,6 +705,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 - Deploying a model using FastAPI and Docker
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -721,6 +739,397 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-skeleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project skeleton
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-fastapi-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1 – FastAPI Backend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1 – FastAPI Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-11-define-pydantic-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.1 – Define Pydantic Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-12-implement-health-and-models-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.2 – Implement /health and /models endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-13-implement-generate-post-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.3 – Implement /generate POST endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-14-implement-generatestream-post-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.4 – Implement /generate/stream POST endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-docker-containerization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2 – Docker Containerization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2 – Docker Containerization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-21-write-the-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.1 – Write the Dockerfile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-22-write-docker-composeyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.2 – Write docker-compose.yml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-23-read-the-ollama-url-from-an-environment-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.3 – Read the Ollama URL from an environment variable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-postman-raw-api-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3 – Postman: Raw API Inspection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3 – Postman: Raw API Inspection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-31-test-your-endpoints-in-postman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.1 – Test your endpoints in Postman
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-conversation-endpoint-sqlite-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4 – Conversation Endpoint + SQLite History
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4 – Conversation Endpoint + SQLite History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-41-implement-the-database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 4.1 – Implement the database schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-42-implement-session-and-message-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 4.2 – Implement session and message operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-43-implement-post-conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 4.3 – Implement POST /conversation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-44-implement-get-conversationsession_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 4.4 – Implement GET /conversation/{session_id}
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-streamlit-chat-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5 – Streamlit Chat UI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5 – Streamlit Chat UI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-51-implement-the-chat-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 5.1 – Implement the Chat interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-semantic-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6 – Semantic Caching
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6 – Semantic Caching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-61-implement-embedding-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 6.1 – Implement embedding generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-62-implement-cosine-similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 6.2 – Implement cosine similarity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-63-implement-model-aware-cache-check-and-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 6.3 – Implement model-aware cache check and store
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-64-add-semantic-caching-to-post-generate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 6.4 – Add semantic caching to POST /generate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-65-threshold-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 6.5 – Threshold experiment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giving-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Giving feedback
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -839,6 +1248,386 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-skeleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project skeleton
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-fastapi-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1 – FastAPI Backend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1 – FastAPI Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-11-define-pydantic-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.1 – Define Pydantic Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-12-implement-health-and-models-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.2 – Implement /health and /models endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-13-implement-generate-post-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.3 – Implement /generate POST endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-14-implement-generatestream-post-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1.4 – Implement /generate/stream POST endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-docker-containerization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2 – Docker Containerization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2 – Docker Containerization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-21-write-the-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.1 – Write the Dockerfile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-22-write-docker-composeyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.2 – Write docker-compose.yml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-23-read-the-ollama-url-from-an-environment-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2.3 – Read the Ollama URL from an environment variable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-postman-raw-api-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3 – Postman: Raw API Inspection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3 – Postman: Raw API Inspection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-31-test-your-endpoints-in-postman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3.1 – Test your endpoints in Postman
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-conversation-endpoint-sqlite-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4 – Conversation Endpoint + SQLite History
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4 – Conversation Endpoint + SQLite History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-41-implement-the-database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 4.1 – Implement the database schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-42-implement-session-and-message-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 4.2 – Implement session and message operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-43-implement-post-conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 4.3 – Implement POST /conversation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-44-implement-get-conversationsession_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 4.4 – Implement GET /conversation/{session_id}
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-streamlit-chat-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5 – Streamlit Chat UI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5 – Streamlit Chat UI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-51-implement-the-chat-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 5.1 – Implement the Chat interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-semantic-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6 – Semantic Caching
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6 – Semantic Caching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-61-implement-embedding-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 6.1 – Implement embedding generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-62-implement-cosine-similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 6.2 – Implement cosine similarity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-63-implement-model-aware-cache-check-and-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 6.3 – Implement model-aware cache check and store
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-64-add-semantic-caching-to-post-generate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 6.4 – Add semantic caching to POST /generate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-65-threshold-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 6.5 – Threshold experiment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giving-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Giving feedback
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -863,7 +1652,983 @@
 
 
 <h1 id="06-deploying-a-model-using-fastapi-and-docker">06 - Deploying a model using FastAPI and Docker<a class="headerlink" href="#06-deploying-a-model-using-fastapi-and-docker" title="Permanent link">¶</a></h1>
-<p>Details will be added shortly.</p>
+<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">¶</a></h2>
+<p>The main goal of this laboratory is to turn a local LLM into a production-style service: a REST API built with FastAPI, containerized with Docker, backed by a SQLite conversation history, used from a Streamlit chat UI, and made faster with semantic caching.</p>
+<p>The structure of this laboratory is as follows:</p>
+<ol>
+<li>Installing the required dependencies and creating the project skeleton.</li>
+<li>FastAPI Backend [5 points in total]<ol>
+<li>Define Pydantic models [0.5 point]</li>
+<li>Implement <code>/health</code> and <code>/models</code> endpoints [0.5 point]</li>
+<li>Implement <code>/generate</code> POST endpoint [2 points]</li>
+<li>Implement <code>/generate/stream</code> POST endpoint [2 points]</li>
+</ol>
+</li>
+<li>Docker Containerization [3 points in total]<ol>
+<li>Write the Dockerfile [1 point]</li>
+<li>Write docker-compose.yml [1 point]</li>
+<li>Read the Ollama URL from an environment variable [1 point]</li>
+</ol>
+</li>
+<li>Postman: Raw API Inspection [1 point]</li>
+<li>Conversation Endpoint + SQLite History [4 points in total]<ol>
+<li>Implement the database schema [1 point]</li>
+<li>Implement session and message operations [1 point]</li>
+<li>Implement <code>POST /conversation</code> [1 point]</li>
+<li>Implement <code>GET /conversation/{session_id}</code> [1 point]</li>
+</ol>
+</li>
+<li>Streamlit Chat UI [3 points]</li>
+<li>Semantic Caching [4 points in total]<ol>
+<li>Implement embedding generation [1 point]</li>
+<li>Implement cosine similarity [0.5 point]</li>
+<li>Implement model-aware cache check and store [1 point]</li>
+<li>Add semantic caching to <code>POST /generate</code> [1 point]</li>
+<li>Threshold experiment [0.5 point]</li>
+</ol>
+</li>
+<li>Giving feedback [+1 point]</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Grading</p>
+<p>In order to pass this laboratory, you must obtain at least 8 points out of 20.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Screenshot requirement</p>
+<p>At the end of <strong>every</strong> exercise (marked with a <img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> <strong>Screenshot</strong> note), you must take a screenshot of your working solution, including its output, and upload it together with your solution, using the exact filename given in that note (e.g. <code>f1_1.png</code>, <code>f4_2.png</code>). Solutions missing the required screenshots, or using the wrong filename, will not be accepted.</p>
+<p>If an output does not fit on one screen, split it into several screenshots with a numeric suffix (e.g. <code>f3_1a_1.png</code>, <code>f3_1a_2.png</code>).</p>
+</div>
+<h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">¶</a></h2>
+<p>Don't forget to follow the assignment submission process described under <a href="../../information/github/">GitHub</a> while working on this laboratory.</p>
+<div class="admonition important">
+<p class="admonition-title">Reviewer</p>
+<p>When creating the pull request for this laboratory, assign it to the <code>domonkosadam</code> GitHub user.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Project files</p>
+<p>This laboratory is a small Python project: you work in plain <code>.py</code> files (plus a <code>Dockerfile</code>, a <code>.dockerignore</code> and a <code>docker-compose.yml</code>), not in a notebook. Create the files from the skeletons in the <a href="#project-skeleton">Project skeleton</a> section in the root of your repository. Regardless of how you test your code (terminal, Postman, a notebook for experiments), make sure that <strong>everything</strong> (code, <code>answers.md</code> and the required screenshots) is committed and pushed to your solution branch. Do <strong>not</strong> commit your virtual environment, <code>data/</code> or any <code>*.db</code> file.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Written answers</p>
+<p>Some exercises contain questions (marked with <img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> <strong>Written answer</strong>). Answer them in a file called <code>answers.md</code> in the root of your repository, under a heading with the exercise number (e.g. <code>## Exercise 1.2</code>). Your feedback at the end of the laboratory also goes into this file (under <code>## Feedback</code>). Make sure <code>answers.md</code> is committed and pushed together with your solution and screenshots.</p>
+</div>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">¶</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h3>
+<p>Make sure the following are available on your machine before starting:</p>
+<ul>
+<li><strong>Ollama</strong> running locally (<code>ollama serve</code>, or the desktop app)</li>
+<li>The generation model: <code>ollama pull llama3.2</code></li>
+<li>The embedding model: <code>ollama pull nomic-embed-text</code></li>
+<li><strong>Docker Desktop</strong> (or Docker Engine with the Compose plugin) installed and running</li>
+<li><strong>Postman</strong> installed</li>
+<li><strong>Python 3.11 – 3.14</strong> (on Windows on ARM, install the x64 build of Python)</li>
+</ul>
+<p>Verify that Ollama is working:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:11434/api/tags
+</code></pre></div>
+<div class="admonition important">
+<p class="admonition-title">Mandatory</p>
+<p>Create a virtual environment and install the pinned dependencies. Both requirements files pin the exact version of <strong>every</strong> package, including all indirect dependencies, and they are locked together, so they can be installed into the same environment. If <code>pip</code> reports success but installed almost nothing (check with <code>pip list</code>), your Python version / platform combination is not supported (see above).</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">          </span><span class="c1"># Windows: .venv\Scripts\activate</span>
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>https://raw.githubusercontent.com/VIAUMSMA001/laboratories/main/docs/laboratories/06-model-deployment/requirements_backend.txt
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>https://raw.githubusercontent.com/VIAUMSMA001/laboratories/main/docs/laboratories/06-model-deployment/requirements_frontend.txt
+</code></pre></div>
+<p>Also download both files into your project folder: the Docker image of Exercise 2.1 installs <code>requirements_backend.txt</code>.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-O<span class="w"> </span>https://raw.githubusercontent.com/VIAUMSMA001/laboratories/main/docs/laboratories/06-model-deployment/requirements_backend.txt
+curl<span class="w"> </span>-O<span class="w"> </span>https://raw.githubusercontent.com/VIAUMSMA001/laboratories/main/docs/laboratories/06-model-deployment/requirements_frontend.txt
+</code></pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Windows users</p>
+<p>The <code>curl</code> examples use bash quoting. Run them in <strong>Git Bash</strong> or <strong>WSL</strong>; in PowerShell use <code>curl.exe</code> and escape the inner double quotes, or use <code>Invoke-RestMethod</code>, e.g.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Invoke-RestMethod</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-Uri</span> <span class="n">http</span><span class="p">://</span><span class="n">localhost</span><span class="p">:</span><span class="n">8000</span><span class="p">/</span><span class="n">generate</span> <span class="n">-ContentType</span> <span class="s2">"application/json"</span> <span class="n">-Body</span> <span class="s1">'{"prompt": "Hi"}'</span>
+</code></pre></div>
+</div>
+<p>The main packages in the requirements files are:</p>
+<div class="highlight"><pre><span></span><code>aiosqlite==0.22.1
+fastapi==0.141.1
+httpx==0.28.1
+pydantic==2.13.5
+uvicorn==0.54.0
+requests==2.34.2
+streamlit==1.64.0
+</code></pre></div>
+<p>Useful references:</p>
+<ul>
+<li>FastAPI: <a href="https://fastapi.tiangolo.com/">https://fastapi.tiangolo.com/</a></li>
+<li>HTTPX (async client, streaming): <a href="https://www.python-httpx.org/async/">https://www.python-httpx.org/async/</a></li>
+<li>Ollama REST API: <a href="https://github.com/ollama/ollama/blob/main/docs/api.md">https://github.com/ollama/ollama/blob/main/docs/api.md</a></li>
+<li>aiosqlite: <a href="https://aiosqlite.omnilib.dev/">https://aiosqlite.omnilib.dev/</a></li>
+<li>Dockerfile reference: <a href="https://docs.docker.com/reference/dockerfile/">https://docs.docker.com/reference/dockerfile/</a></li>
+<li>Compose file reference: <a href="https://docs.docker.com/reference/compose-file/">https://docs.docker.com/reference/compose-file/</a></li>
+</ul>
+<h3 id="project-skeleton">Project skeleton<a class="headerlink" href="#project-skeleton" title="Permanent link">¶</a></h3>
+<p>Create the following files. They contain only the provided infrastructure, function signatures and docstrings: <strong>everything marked <code>TODO</code> is yours to write</strong>, following the exercises below.</p>
+<div class="highlight"><pre><span></span><code>.
+├── app.py                     # Streamlit chat UI (Part 5)
+├── cache.py                   # semantic cache (Part 6)
+├── config.py                  # settings (Exercise 2.3)
+├── database.py                # SQLite history (Part 4)
+├── main.py                    # FastAPI backend (Parts 1, 4, 6)
+├── Dockerfile                 # Exercise 2.1
+├── .dockerignore              # Exercise 2.1
+├── docker-compose.yml         # Exercise 2.2
+├── requirements_backend.txt   # downloaded above
+├── requirements_frontend.txt  # downloaded above
+└── answers.md                 # written answers and feedback
+</code></pre></div>
+<div class="highlight"><span class="filename">config.py</span><pre><span></span><code><span class="sd">"""</span>
+<span class="sd">config.py — Settings shared by main.py and cache.py</span>
+<span class="sd">"""</span>
+
+<span class="c1"># TODO 2.3 — make the Ollama URL configurable through the OLLAMA_BASE_URL environment variable</span>
+<span class="n">OLLAMA_BASE_URL</span> <span class="o">=</span> <span class="s2">"http://localhost:11434"</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">main.py</span><pre><span></span><code><span class="sd">"""</span>
+<span class="sd">main.py — FastAPI backend for local LLM deployment</span>
+
+<span class="sd">Endpoints (the full specification is in the laboratory description):</span>
+<span class="sd">    GET  /health                      — service + Ollama status               (Exercise 1.2)</span>
+<span class="sd">    GET  /models                      — list available Ollama models          (Exercise 1.2)</span>
+<span class="sd">    POST /generate                    — single-turn generation                (Exercise 1.3, cache in 6.4)</span>
+<span class="sd">    POST /generate/stream             — single-turn streaming generation      (Exercise 1.4)</span>
+<span class="sd">    POST /conversation                — multi-turn chat with SQLite history   (Exercise 4.3)</span>
+<span class="sd">    GET  /conversation/{session_id}   — retrieve conversation history         (Exercise 4.4)</span>
+<span class="sd">    GET  /cache/stats                 — number of cached entries              (provided)</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">asynccontextmanager</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">HTTPException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi.responses</span><span class="w"> </span><span class="kn">import</span> <span class="n">StreamingResponse</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">check_cache</span><span class="p">,</span> <span class="n">store_in_cache</span><span class="p">,</span> <span class="n">get_embedding</span><span class="p">,</span> <span class="n">cache_size</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">config</span><span class="w"> </span><span class="kn">import</span> <span class="n">OLLAMA_BASE_URL</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">database</span><span class="w"> </span><span class="kn">import</span> <span class="n">init_db</span><span class="p">,</span> <span class="n">create_session</span><span class="p">,</span> <span class="n">save_message</span><span class="p">,</span> <span class="n">get_history</span><span class="p">,</span> <span class="n">session_exists</span>
+
+
+<span class="c1"># TODO 1.1 — request/response models</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Startup — initialize the database via lifespan (provided)</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+
+<span class="nd">@asynccontextmanager</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">lifespan</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">):</span>
+    <span class="k">await</span> <span class="n">init_db</span><span class="p">()</span>
+    <span class="k">yield</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"LLM API Lab"</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">"2.0.0"</span><span class="p">,</span> <span class="n">lifespan</span><span class="o">=</span><span class="n">lifespan</span><span class="p">)</span>
+
+
+<span class="c1"># TODO 1.2 — GET /health and GET /models</span>
+
+
+<span class="c1"># TODO 1.3 — POST /generate</span>
+
+
+<span class="c1"># TODO 1.4 — POST /generate/stream</span>
+
+
+<span class="c1"># TODO 4.3 — POST /conversation</span>
+
+
+<span class="c1"># TODO 4.4 — GET /conversation/{session_id}</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># Utility endpoint (provided)</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"/cache/stats"</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">cache_stats</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"cached_entries"</span><span class="p">:</span> <span class="n">cache_size</span><span class="p">()}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">database.py</span><pre><span></span><code><span class="sd">"""</span>
+<span class="sd">database.py — SQLite conversation history using aiosqlite</span>
+
+<span class="sd">Schema:</span>
+<span class="sd">    sessions:  id (TEXT PK), created_at (TEXT)</span>
+<span class="sd">    messages:  id (INTEGER PK AUTOINCREMENT), session_id (TEXT FK → sessions.id),</span>
+<span class="sd">               role (TEXT), content (TEXT), timestamp (TEXT)</span>
+
+<span class="sd">All timestamps are UTC ISO-8601 strings. The full specification is in the laboratory description (Part 4).</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">aiosqlite</span>
+
+<span class="n">DB_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"DB_PATH"</span><span class="p">,</span> <span class="s2">"./conversations.db"</span><span class="p">)</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">init_db</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Create both tables if they do not exist yet (safe to call on every startup)."""</span>
+    <span class="c1"># TODO 4.1 — this runs at server startup; until you implement it, it does nothing.</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">create_session</span><span class="p">(</span><span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Insert a new session. Creating an already existing session must not raise an error."""</span>
+    <span class="c1"># TODO 4.2a</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">session_exists</span><span class="p">(</span><span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return True if a session with the given id exists."""</span>
+    <span class="c1"># TODO 4.2b</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">save_message</span><span class="p">(</span><span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">role</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Append a message ("user" or "assistant") to a session's history."""</span>
+    <span class="c1"># TODO 4.2c</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_history</span><span class="p">(</span><span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Return the session's messages in the order they were saved: [{"role": ..., "content": ...}, ...]."""</span>
+    <span class="c1"># TODO 4.2d</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">cache.py</span><pre><span></span><code><span class="sd">"""</span>
+<span class="sd">cache.py — Semantic caching using Ollama embeddings and cosine similarity</span>
+
+<span class="sd">How it works:</span>
+<span class="sd">    1. Incoming prompt → embed with nomic-embed-text → 768-dim vector</span>
+<span class="sd">    2. Compare against the cached prompt embeddings **in the same namespace** using cosine similarity</span>
+<span class="sd">    3. If the best similarity &gt;= threshold → return the cached response (cache HIT)</span>
+<span class="sd">    4. Otherwise → call the LLM and store the result in the cache (cache MISS)</span>
+
+<span class="sd">The cache is stored in memory as a module-level list.</span>
+<span class="sd">In production it would be replaced by a vector database (e.g. Redis, Qdrant, pgvector).</span>
+<span class="sd">The full specification is in the laboratory description (Part 6).</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">config</span><span class="w"> </span><span class="kn">import</span> <span class="n">OLLAMA_BASE_URL</span>
+
+<span class="n">EMBED_MODEL</span> <span class="o">=</span> <span class="s2">"nomic-embed-text"</span>
+<span class="n">DEFAULT_THRESHOLD</span> <span class="o">=</span> <span class="mf">0.92</span>
+
+<span class="c1"># In-memory cache: list of {"embedding": [...], "prompt": str, "namespace": str, "response": str}</span>
+<span class="c1"># The namespace groups interchangeable answers (e.g. same model and same length limit; see Exercise 6.4).</span>
+<span class="n">_cache</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_embedding</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Return the embedding vector of `text`, computed by EMBED_MODEL through Ollama."""</span>
+    <span class="c1"># TODO 6.1</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cosine_similarity</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">b</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return the cosine similarity of a and b (standard library only, no numpy)."""</span>
+    <span class="c1"># TODO 6.2</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">check_cache</span><span class="p">(</span>
+    <span class="n">prompt_embedding</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span>
+    <span class="n">namespace</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">DEFAULT_THRESHOLD</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Find the most similar cached prompt in the same `namespace`.</span>
+
+<span class="sd">    Returns (hit, cached_response, best_similarity):</span>
+<span class="sd">        hit             — True if best_similarity &gt;= threshold</span>
+<span class="sd">        cached_response — the response of the best match on a hit, otherwise ""</span>
+<span class="sd">        best_similarity — the highest similarity found (0.0 if there is no candidate)</span>
+<span class="sd">    """</span>
+    <span class="c1"># TODO 6.3a</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">store_in_cache</span><span class="p">(</span><span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">embedding</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">response</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Add a new entry to the cache."""</span>
+    <span class="c1"># TODO 6.3b</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cache_size</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">_cache</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">clear_cache</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">_cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">app.py</span><pre><span></span><code><span class="sd">"""</span>
+<span class="sd">app.py — Streamlit frontend for the LLM API Lab</span>
+
+<span class="sd">Chat — ChatGPT-like interface using the /conversation endpoint.</span>
+<span class="sd">The full specification is in the laboratory description (Exercise 5.1).</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">streamlit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">st</span>
+
+<span class="n">API_BASE</span> <span class="o">=</span> <span class="s2">"http://localhost:8000"</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span><span class="n">page_title</span><span class="o">=</span><span class="s2">"LLM API Lab"</span><span class="p">,</span> <span class="n">page_icon</span><span class="o">=</span><span class="s2">"🤖"</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"wide"</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"🤖 LLM API Lab"</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_models</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Return the model names offered by the backend (provided helper)."""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">API_BASE</span><span class="si">}</span><span class="s2">/models"</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"models"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"llama3.2"</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s2">"llama3.2"</span><span class="p">]</span>
+
+
+<span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">"Conversational Chat"</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">caption</span><span class="p">(</span><span class="s2">"Messages are persisted per session using the /conversation endpoint."</span><span class="p">)</span>
+
+<span class="c1"># TODO 5.1a — session state</span>
+
+<span class="c1"># TODO 5.1b — session controls, model selector, chat history</span>
+
+<span class="c1"># TODO 5.1c — handle a new message</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span class="c"># Dockerfile</span>
+<span class="c">#</span>
+<span class="c"># Exercise 2.1 — Build a container image for the FastAPI backend.</span>
+<span class="c"># Write the Dockerfile from scratch; the requirements are listed in the laboratory description (Exercise 2.1).</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">docker-compose.yml</span><pre><span></span><code><span class="c1"># docker-compose.yml</span>
+<span class="c1">#</span>
+<span class="c1"># Exercise 2.2 — Define the `api` service.</span>
+<span class="c1"># The requirements are listed in the laboratory description (Exercise 2.2).</span>
+</code></pre></div>
+<h2 id="part-1-fastapi-backend">Part 1 – FastAPI Backend<a class="headerlink" href="#part-1-fastapi-backend" title="Permanent link">¶</a></h2>
+<p>FastAPI is a modern Python web framework for building APIs with automatic validation. It uses <strong>Pydantic</strong> models to define the shape of incoming and outgoing data, and <strong>uvicorn</strong> as the ASGI server that handles the HTTP connections.</p>
+<p>In an ML deployment, FastAPI sits between your model and any client. This gives you:</p>
+<ul>
+<li>a stable, versioned interface that clients depend on (not Python internals),</li>
+<li>input validation before anything reaches the model,</li>
+<li>a place to add logging, caching, auth and monitoring later,</li>
+<li>language-agnostic access: any client that speaks HTTP can use it.</li>
+</ul>
+<p>All calls to Ollama must be <strong>asynchronous</strong> (<code>httpx.AsyncClient</code>), so that a slow LLM call does not block the server. The Ollama base URL comes from <code>config.py</code> (<code>OLLAMA_BASE_URL</code>); do not hard-code it anywhere else.</p>
+<p><strong>Error handling (applies to every endpoint that calls Ollama):</strong></p>
+<ul>
+<li>Ollama cannot be reached (connection error, timeout) → <strong>HTTP 503</strong></li>
+<li>Ollama answers with an error status (e.g. unknown model) → <strong>HTTP 502</strong>, with Ollama's error message in <code>detail</code></li>
+<li>never let such a failure surface as an unhandled 500 error</li>
+</ul>
+<p>Start the app locally with:
+</p><div class="highlight"><pre><span></span><code>uvicorn<span class="w"> </span>main:app<span class="w"> </span>--reload<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
+</code></pre></div><p></p>
+<p>The interactive API documentation generated from your models is available at <a href="http://localhost:8000/docs">http://localhost:8000/docs</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Work through Part 1 entirely with <code>uvicorn</code> running locally before moving to Docker in Part 2. If something breaks after containerizing, you then know that the code itself is correct.</p>
+</div>
+<h3 id="exercise-11-define-pydantic-models">Exercise 1.1 – Define Pydantic Models<a class="headerlink" href="#exercise-11-define-pydantic-models" title="Permanent link">¶</a></h3>
+<p>In <code>main.py</code>, define the following four models:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GenerateRequest</code></td>
+<td><code>prompt</code></td>
+<td>str</td>
+<td>–</td>
+</tr>
+<tr>
+<td></td>
+<td><code>model</code></td>
+<td>str</td>
+<td><code>"llama3.2"</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>temperature</code></td>
+<td>float</td>
+<td><code>0.7</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>max_tokens</code></td>
+<td>int</td>
+<td><code>512</code></td>
+</tr>
+<tr>
+<td><code>GenerateResponse</code></td>
+<td><code>response</code></td>
+<td>str</td>
+<td>–</td>
+</tr>
+<tr>
+<td></td>
+<td><code>model</code></td>
+<td>str</td>
+<td>–</td>
+</tr>
+<tr>
+<td></td>
+<td><code>latency_ms</code></td>
+<td>float</td>
+<td>–</td>
+</tr>
+<tr>
+<td></td>
+<td><code>token_count</code></td>
+<td>int</td>
+<td>–</td>
+</tr>
+<tr>
+<td></td>
+<td><code>cache_hit</code></td>
+<td>bool</td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>similarity_score</code></td>
+<td>float</td>
+<td><code>0.0</code></td>
+</tr>
+<tr>
+<td><code>ConversationRequest</code></td>
+<td><code>session_id</code></td>
+<td>str</td>
+<td>–</td>
+</tr>
+<tr>
+<td></td>
+<td><code>message</code></td>
+<td>str</td>
+<td>–</td>
+</tr>
+<tr>
+<td></td>
+<td><code>model</code></td>
+<td>str</td>
+<td><code>"llama3.2"</code></td>
+</tr>
+<tr>
+<td><code>ConversationResponse</code></td>
+<td><code>response</code></td>
+<td>str</td>
+<td>–</td>
+</tr>
+<tr>
+<td></td>
+<td><code>session_id</code></td>
+<td>str</td>
+<td>–</td>
+</tr>
+<tr>
+<td></td>
+<td><code>latency_ms</code></td>
+<td>float</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Expected outcome:</strong> the models can be created and apply their defaults:
+</p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"from main import GenerateRequest; print(GenerateRequest(prompt='hi'))"</span>
+<span class="c1"># prompt='hi' model='llama3.2' temperature=0.7 max_tokens=512</span>
+</code></pre></div>
+(FastAPI only lists a model under <em>Schemas</em> at <a href="http://localhost:8000/docs">http://localhost:8000/docs</a> once an endpoint uses it, so they appear there as you implement the endpoints.)<p></p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the output of the <code>python -c</code> command, and upload it together with your solution as <code>f1_1.png</code>.</p>
+</div>
+<h3 id="exercise-12-implement-health-and-models-endpoints">Exercise 1.2 – Implement <code>/health</code> and <code>/models</code> endpoints<a class="headerlink" href="#exercise-12-implement-health-and-models-endpoints" title="Permanent link">¶</a></h3>
+<p><strong><code>GET /health</code></strong> returns <code>{"status": "ok", "ollama": true|false}</code>:</p>
+<ul>
+<li><code>ollama</code> is <code>true</code> if Ollama's model list endpoint (<code>GET /api/tags</code>) answers with HTTP 200 within 5 seconds, otherwise <code>false</code>.</li>
+<li>The endpoint itself must never fail, even if Ollama is not running.</li>
+</ul>
+<p><strong><code>GET /models</code></strong> returns <code>{"models": [...]}</code>:</p>
+<ul>
+<li>the names of the installed Ollama models that can <strong>generate text</strong> (from <code>GET /api/tags</code>). Embedding models such as <code>nomic-embed-text</code> cannot answer prompts and must not be listed: ask Ollama for each model's capabilities (<code>POST /api/show</code>) and keep the models with the <code>completion</code> capability,</li>
+<li>respond with <strong>HTTP 503</strong> and an explanatory <code>detail</code> if Ollama cannot be reached.</li>
+</ul>
+<p><strong>Expected outcome:</strong>
+</p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:8000/health
+<span class="c1"># {"status":"ok","ollama":true}</span>
+
+curl<span class="w"> </span>http://localhost:8000/models
+<span class="c1"># {"models":["llama3.2:latest", ...]}          (no nomic-embed-text)</span>
+</code></pre></div>
+Then make Ollama unreachable and check that <code>/health</code> reports <code>"ollama": false</code> and <code>/models</code> returns 503. Either stop Ollama (quit the Ollama desktop app on macOS/Windows, or run <code>sudo systemctl stop ollama</code> on Linux), or temporarily set <code>OLLAMA_BASE_URL</code> in <code>config.py</code> to <code>http://localhost:1</code> (an address where nothing listens). Undo it afterwards.<p></p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the <code>/health</code> and <code>/models</code> responses while Ollama is running, and both responses while Ollama is unreachable, and upload it together with your solution as <code>f1_2.png</code>.</p>
+</div>
+<h3 id="exercise-13-implement-generate-post-endpoint">Exercise 1.3 – Implement <code>/generate</code> POST endpoint<a class="headerlink" href="#exercise-13-implement-generate-post-endpoint" title="Permanent link">¶</a></h3>
+<p><code>POST /generate</code> takes a <code>GenerateRequest</code> and returns a <code>GenerateResponse</code>:</p>
+<ul>
+<li>Generate a single, <strong>non-streamed</strong> completion with Ollama's <code>POST /api/generate</code> endpoint, passing the request's <code>model</code>, <code>prompt</code>, <code>temperature</code> and <code>max_tokens</code> (in Ollama this option is called <code>num_predict</code>).</li>
+<li><code>token_count</code> is the number of generated tokens reported by Ollama.</li>
+<li><code>latency_ms</code> is the total time spent in the endpoint, in milliseconds, rounded to 2 decimals.</li>
+<li>Follow the error-handling rules above (502 / 503).</li>
+<li>LLM responses can be slow: use a generous timeout (120 s).</li>
+</ul>
+<p>Leave <code>cache_hit</code> and <code>similarity_score</code> at their defaults for now; semantic caching is added in Exercise 6.4.</p>
+<p><strong>Expected outcome:</strong>
+</p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8000/generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"prompt": "What is the capital of France?", "model": "llama3.2"}'</span>
+<span class="c1"># {"response":"The capital of France is Paris.","model":"llama3.2","latency_ms":1243.5,</span>
+<span class="c1">#  "token_count":8,"cache_hit":false,"similarity_score":0.0}</span>
+</code></pre></div>
+Also check that <code>{"prompt": "Hi", "model": "no-such-model"}</code> returns 502, that a request without <code>prompt</code> returns 422, and that with Ollama unreachable (e.g. temporarily set <code>OLLAMA_BASE_URL</code> in <code>config.py</code> to <code>http://localhost:1</code>) the endpoint returns 503.<p></p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the successful <code>/generate</code> response and the 502, 422 and 503 cases, and upload it together with your solution as <code>f1_3.png</code>.</p>
+</div>
+<h3 id="exercise-14-implement-generatestream-post-endpoint">Exercise 1.4 – Implement <code>/generate/stream</code> POST endpoint<a class="headerlink" href="#exercise-14-implement-generatestream-post-endpoint" title="Permanent link">¶</a></h3>
+<p><code>POST /generate/stream</code> takes a <code>GenerateRequest</code> and returns the generated text as a <strong>plain-text stream</strong>, forwarding each piece of text as soon as Ollama produces it:</p>
+<ul>
+<li>Call Ollama with streaming enabled. Ollama then sends one JSON object per line; the text is in the <code>response</code> field and the last object has <code>"done": true</code>.</li>
+<li>Use FastAPI's <code>StreamingResponse</code> with an async generator, and consume Ollama's stream with <code>httpx</code>'s streaming API. Do <strong>not</strong> read the whole response into memory first.</li>
+<li>Respect <code>model</code>, <code>temperature</code> and <code>max_tokens</code>.</li>
+<li>Errors must be reported with a proper status code (502 / 503) <strong>before</strong> any text is streamed: once a <code>StreamingResponse</code> has started, its status code can no longer change. So check Ollama's response status before you return the <code>StreamingResponse</code>, and make sure the Ollama connection is closed when the stream ends.</li>
+</ul>
+<p><strong>Expected outcome:</strong> the response arrives token by token:
+</p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--no-buffer<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8000/generate/stream<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"prompt": "Count slowly from 1 to 10"}'</span>
+</code></pre></div>
+and <code>{"prompt": "Hi", "model": "no-such-model"}</code> returns 502 (not 200 with an empty body).<p></p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the streamed <code>curl</code> output and the 502 response for the unknown model, and upload it together with your solution as <code>f1_4.png</code>.</p>
+</div>
+<h2 id="part-2-docker-containerization">Part 2 – Docker Containerization<a class="headerlink" href="#part-2-docker-containerization" title="Permanent link">¶</a></h2>
+<p>Docker packages your application and all its dependencies into a <strong>container</strong>: an isolated, reproducible environment. A model-serving container behaves identically regardless of the host machine's Python version, OS or installed packages.</p>
+<p><strong>Networking:</strong> Ollama runs on your <em>host</em> machine, not inside the container. Inside a container, <code>localhost</code> means the container itself. Docker Desktop (Windows, macOS) provides the special hostname <code>host.docker.internal</code> to reach the host.</p>
+<p><strong>Linux with Docker Engine (no Docker Desktop):</strong> two extra steps are needed.</p>
+<ol>
+<li>Map <code>host.docker.internal</code> to the host (Exercise 2.2).</li>
+<li>By default Ollama only accepts connections from <code>127.0.0.1</code>, so requests from a container are refused. Make it listen on all interfaces: <code>sudo systemctl edit ollama</code>, add
+    <div class="highlight"><pre><span></span><code>[Service]
+Environment="OLLAMA_HOST=0.0.0.0:11434"
+</code></pre></div>
+    then <code>sudo systemctl daemon-reload &amp;&amp; sudo systemctl restart ollama</code>. If a firewall is active, allow port 11434 from the Docker bridge (e.g. <code>sudo ufw allow in on docker0 to any port 11434</code>). Note that this exposes Ollama to your local network, unless the firewall blocks it.</li>
+</ol>
+<p><strong>SQLite and Docker:</strong> SQLite stores the database in a plain file and needs no database server. Mounting a host directory into the container makes the file survive container restarts and rebuilds.</p>
+<p>Key Docker commands:
+</p><div class="highlight"><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>lab-llm-api<span class="w"> </span>.<span class="w">                  </span><span class="c1"># build an image from the Dockerfile in this folder</span>
+docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>lab-llm-api<span class="w">            </span><span class="c1"># run a container from the image</span>
+docker<span class="w"> </span>ps<span class="w">                                      </span><span class="c1"># list running containers</span>
+docker<span class="w"> </span>logs<span class="w"> </span>&lt;container_id&gt;<span class="w">                     </span><span class="c1"># view logs</span>
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build<span class="w">                      </span><span class="c1"># build and start the services in docker-compose.yml</span>
+docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w">                            </span><span class="c1"># stop and remove them</span>
+</code></pre></div><p></p>
+<h3 id="exercise-21-write-the-dockerfile">Exercise 2.1 – Write the Dockerfile<a class="headerlink" href="#exercise-21-write-the-dockerfile" title="Permanent link">¶</a></h3>
+<p>Write <code>Dockerfile</code> from scratch. Requirements:</p>
+<ol>
+<li>Base image: the official <strong>slim</strong> image of <strong>Python 3.12</strong>.</li>
+<li>The application lives in <code>/app</code> inside the image.</li>
+<li>Dependencies are installed from <code>requirements_backend.txt</code> <strong>in a separate layer before the source code is copied</strong>, so that changing a <code>.py</code> file does not reinstall all packages on the next build. Do not keep pip's download cache in the image.</li>
+<li>The rest of the source code is copied into the image.</li>
+<li>The image documents that the app listens on port <code>8000</code>.</li>
+<li>Starting a container runs the app with uvicorn on <code>0.0.0.0:8000</code> (no <code>--reload</code>).</li>
+<li>Add a <code>.dockerignore</code> so that local-only files are <strong>not</strong> copied into the image: your virtual environment, <code>__pycache__</code> folders, the <code>data/</code> folder and any <code>*.db</code> file.</li>
+</ol>
+<p><strong>Expected outcome:</strong> <code>docker build -t lab-llm-api .</code> completes without errors, and <code>docker image ls lab-llm-api</code> shows an image of roughly 250–300 MB (a much larger image usually means that your <code>.venv</code> was copied). Change a comment in <code>main.py</code>, rebuild, and verify in the build output that the dependency layer is <code>CACHED</code>.</p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the output of the second <code>docker build</code> (with the <code>CACHED</code> dependency step) and of <code>docker image ls lab-llm-api</code>, and upload it together with your solution as <code>f2_1.png</code>.</p>
+</div>
+<h3 id="exercise-22-write-docker-composeyml">Exercise 2.2 – Write docker-compose.yml<a class="headerlink" href="#exercise-22-write-docker-composeyml" title="Permanent link">¶</a></h3>
+<p>Define one service called <code>api</code> in <code>docker-compose.yml</code>:</p>
+<ul>
+<li>built from the <code>Dockerfile</code> in the current directory,</li>
+<li>host port <code>8000</code> mapped to container port <code>8000</code>,</li>
+<li>environment variables:<ul>
+<li><code>OLLAMA_BASE_URL=http://host.docker.internal:11434</code></li>
+<li><code>DB_PATH=/data/conversations.db</code></li>
+</ul>
+</li>
+<li>the local <code>./data</code> directory mounted at <code>/data</code> in the container,</li>
+<li><code>host.docker.internal</code> must resolve to the host also on Linux (look up <code>extra_hosts</code> and the special value <code>host-gateway</code>).</li>
+</ul>
+<p><strong>Expected outcome:</strong> <code>docker compose up --build</code> starts the API at <a href="http://localhost:8000">http://localhost:8000</a>. Stop your local <code>uvicorn</code> first: both use port 8000, and Docker cannot publish a port that is already in use ("port is already allocated").</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At this point the server starts, but every endpoint that calls Ollama fails (and <code>/health</code> reports <code>"ollama": false</code>), because <code>OLLAMA_BASE_URL</code> in <code>config.py</code> is still hard-coded to <code>localhost</code>. This is expected and is fixed in Exercise 2.3.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the running <code>docker compose up --build</code> output showing that the API started, and upload it together with your solution as <code>f2_2.png</code>.</p>
+</div>
+<h3 id="exercise-23-read-the-ollama-url-from-an-environment-variable">Exercise 2.3 – Read the Ollama URL from an environment variable<a class="headerlink" href="#exercise-23-read-the-ollama-url-from-an-environment-variable" title="Permanent link">¶</a></h3>
+<p>Make <code>OLLAMA_BASE_URL</code> in <code>config.py</code> configurable: use the value of the <code>OLLAMA_BASE_URL</code> environment variable if it is set, and fall back to <code>http://localhost:11434</code> otherwise. (We deliberately do not use <code>OLLAMA_HOST</code>: Ollama itself reads that variable as its <em>listen address</em>, e.g. <code>0.0.0.0</code>, which is not a valid URL for a client.)</p>
+<p><strong>Expected outcome:</strong> <code>uvicorn main:app</code> works locally <strong>and</strong> in <code>docker compose up --build</code>: <code>/health</code> reports <code>"ollama": true</code> in both. Check them one after the other (stop one before starting the other, as both use port 8000).</p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the <code>/health</code> response with <code>"ollama": true</code> from <code>uvicorn</code> running locally and, after stopping it, from the Docker container, and upload it together with your solution as <code>f2_3.png</code>.</p>
+</div>
+<h2 id="part-3-postman-raw-api-inspection">Part 3 – Postman: Raw API Inspection<a class="headerlink" href="#part-3-postman-raw-api-inspection" title="Permanent link">¶</a></h2>
+<p>Before building a frontend, it is valuable to interact with your API at the raw HTTP level. You see exactly what JSON travels over the wire: the same data your Streamlit app will send.</p>
+<p>This part uses your running Docker container from Part 2.</p>
+<h3 id="exercise-31-test-your-endpoints-in-postman">Exercise 3.1 – Test your endpoints in Postman<a class="headerlink" href="#exercise-31-test-your-endpoints-in-postman" title="Permanent link">¶</a></h3>
+<p>Create a Postman Collection called <code>LLM API Lab</code> with the following requests:</p>
+<ol>
+<li><strong>Health check:</strong> <code>GET http://localhost:8000/health</code></li>
+<li><strong>List models:</strong> <code>GET http://localhost:8000/models</code></li>
+<li>
+<p><strong>Generate (non-streaming):</strong> <code>POST http://localhost:8000/generate</code> with the raw JSON body
+    </p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"prompt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Explain what a REST API is in two sentences."</span><span class="p">,</span><span class="w"> </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"llama3.2"</span><span class="p">,</span><span class="w"> </span><span class="nt">"temperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">}</span>
+</code></pre></div><p></p>
+</li>
+<li>
+<p><strong>Generate (streaming):</strong> <code>POST http://localhost:8000/generate/stream</code> with the same body. Postman may buffer the response and show it all at once; use <code>curl --no-buffer</code> to observe the actual streaming.</p>
+</li>
+<li><strong>Validation error:</strong> <code>POST http://localhost:8000/generate</code> with a body that has no <code>prompt</code>. Look at the 422 response FastAPI generates.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of request 1 (health check) in Postman, showing the request and the full response including the status code, and upload it together with your solution as <code>f3_1a.png</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of request 2 (list models), and upload it together with your solution as <code>f3_1b.png</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of request 3 (generate), and upload it together with your solution as <code>f3_1c.png</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of request 4 (generate, streaming), and upload it together with your solution as <code>f3_1d.png</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of request 5 (validation error), and upload it together with your solution as <code>f3_1e.png</code>.</p>
+</div>
+<h2 id="part-4-conversation-endpoint-sqlite-history">Part 4 – Conversation Endpoint + SQLite History<a class="headerlink" href="#part-4-conversation-endpoint-sqlite-history" title="Permanent link">¶</a></h2>
+<p>Stateless endpoints like <code>/generate</code> treat every request in isolation: the model has no memory of previous turns. A real chat needs <strong>conversation history</strong>: each new message is sent together with all previous messages.</p>
+<p>You store the history in <strong>SQLite</strong>, accessed asynchronously with <code>aiosqlite</code> so the database does not block FastAPI's event loop. The schema:</p>
+<div class="highlight"><pre><span></span><code>sessions              messages
+─────────────────     ──────────────────────────────────────────
+id (TEXT PK)          id (INTEGER PK AUTOINCREMENT)
+created_at (TEXT)     session_id (TEXT, FK → sessions.id)
+                      role (TEXT: "user" or "assistant")
+                      content (TEXT)
+                      timestamp (TEXT)
+</code></pre></div>
+<p>For multi-turn conversations, use Ollama's <strong>chat</strong> endpoint (<code>POST /api/chat</code>), which takes the full message list:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"llama3.2"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">      </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assistant"</span><span class="p">,</span><span class="w"> </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hi! How can I help?"</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">      </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is Python?"</span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"stream"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="exercise-41-implement-the-database-schema">Exercise 4.1 – Implement the database schema<a class="headerlink" href="#exercise-41-implement-the-database-schema" title="Permanent link">¶</a></h3>
+<p>Implement <code>init_db()</code> in <code>database.py</code>:</p>
+<ul>
+<li>create both tables exactly as in the schema above; every column except the primary keys is <code>NOT NULL</code>,</li>
+<li>it must be safe to call on every server start (it must not fail or delete data if the tables already exist),</li>
+<li>the foreign key must actually be <strong>enforced</strong>: SQLite ignores foreign keys unless they are switched on for every connection (<code>PRAGMA foreign_keys = ON</code>). Inserting a message for a session that does not exist must fail.</li>
+</ul>
+<p><code>main.py</code> already calls <code>init_db()</code> on startup through the <code>lifespan</code> handler.</p>
+<p><strong>Expected outcome:</strong> the database file (<code>DB_PATH</code>, default <code>./conversations.db</code>) is created and contains both tables. Save the following script as <code>show_schema.py</code> and run it with <code>python show_schema.py</code>; it prints the two <code>CREATE TABLE</code> statements.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">database</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">database</span><span class="o">.</span><span class="n">init_db</span><span class="p">())</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">    SELECT sql FROM sqlite_master</span>
+<span class="s2">    WHERE type = 'table' AND name NOT LIKE 'sqlite_%'</span>
+<span class="s2">"""</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">sql</span><span class="p">,)</span> <span class="ow">in</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="o">.</span><span class="n">DB_PATH</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the output of <code>show_schema.py</code>, and upload it together with your solution as <code>f4_1.png</code>.</p>
+</div>
+<h3 id="exercise-42-implement-session-and-message-operations">Exercise 4.2 – Implement session and message operations<a class="headerlink" href="#exercise-42-implement-session-and-message-operations" title="Permanent link">¶</a></h3>
+<p>Implement the remaining functions in <code>database.py</code>. Use <strong>parameterized queries</strong> (never build SQL with f-strings) and commit after every write.</p>
+<ul>
+<li><strong>4.2a <code>create_session(session_id)</code>:</strong> insert a session with the current UTC time (ISO-8601). Creating an existing session again must silently do nothing.</li>
+<li><strong>4.2b <code>session_exists(session_id) -&gt; bool</code></strong></li>
+<li><strong>4.2c <code>save_message(session_id, role, content)</code>:</strong> insert a message with the current UTC time.</li>
+<li><strong>4.2d <code>get_history(session_id) -&gt; list[dict]</code>:</strong> the messages of the session as <code>[{"role": ..., "content": ...}, ...]</code> <strong>in the order they were saved</strong> (even if two messages have the same timestamp); an empty list for a session without messages.</li>
+</ul>
+<p><strong>Expected outcome:</strong> save the following script as <code>check_database.py</code> and run it with <code>python check_database.py</code>. It uses a separate database file and prints <code>True False</code>, the two messages in the order they were saved, and that the foreign key is enforced.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"DB_PATH"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"check.db"</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">"check.db"</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"check.db"</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">database</span>  <span class="c1"># noqa: E402  (imported after DB_PATH is set)</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="k">await</span> <span class="n">database</span><span class="o">.</span><span class="n">init_db</span><span class="p">()</span>
+    <span class="k">await</span> <span class="n">database</span><span class="o">.</span><span class="n">create_session</span><span class="p">(</span><span class="s2">"demo"</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">database</span><span class="o">.</span><span class="n">create_session</span><span class="p">(</span><span class="s2">"demo"</span><span class="p">)</span>  <span class="c1"># a duplicate must not raise</span>
+    <span class="k">await</span> <span class="n">database</span><span class="o">.</span><span class="n">save_message</span><span class="p">(</span><span class="s2">"demo"</span><span class="p">,</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"Hi"</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">database</span><span class="o">.</span><span class="n">save_message</span><span class="p">(</span><span class="s2">"demo"</span><span class="p">,</span> <span class="s2">"assistant"</span><span class="p">,</span> <span class="s2">"Hello!"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"exists:"</span><span class="p">,</span> <span class="k">await</span> <span class="n">database</span><span class="o">.</span><span class="n">session_exists</span><span class="p">(</span><span class="s2">"demo"</span><span class="p">),</span> <span class="k">await</span> <span class="n">database</span><span class="o">.</span><span class="n">session_exists</span><span class="p">(</span><span class="s2">"nope"</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"history:"</span><span class="p">,</span> <span class="k">await</span> <span class="n">database</span><span class="o">.</span><span class="n">get_history</span><span class="p">(</span><span class="s2">"demo"</span><span class="p">))</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">database</span><span class="o">.</span><span class="n">save_message</span><span class="p">(</span><span class="s2">"nope"</span><span class="p">,</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"orphan"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"foreign key NOT enforced"</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"foreign key enforced:"</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the output of <code>check_database.py</code>, and upload it together with your solution as <code>f4_2.png</code>.</p>
+</div>
+<h3 id="exercise-43-implement-post-conversation">Exercise 4.3 – Implement <code>POST /conversation</code><a class="headerlink" href="#exercise-43-implement-post-conversation" title="Permanent link">¶</a></h3>
+<p><code>POST /conversation</code> takes a <code>ConversationRequest</code> and returns a <code>ConversationResponse</code>:</p>
+<ol>
+<li>If the session does not exist yet, create it.</li>
+<li>Send the <strong>complete history</strong> of the session plus the new user message to Ollama's chat endpoint (non-streamed).</li>
+<li>Only when Ollama answered successfully, store <strong>both</strong> the user's message and the assistant's reply. A failed call must not leave a lone user message in the history (otherwise a retry would send the message twice).</li>
+<li>Return the reply together with the <code>session_id</code> and the total <code>latency_ms</code>.</li>
+<li>Follow the error-handling rules of Part 1 (502 / 503).</li>
+</ol>
+<p><strong>Expected outcome:</strong>
+</p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8000/conversation<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"session_id": "test01", "message": "My name is Alice.", "model": "llama3.2"}'</span>
+
+<span class="c1"># Second message — the model must remember the name</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8000/conversation<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"session_id": "test01", "message": "What is my name?", "model": "llama3.2"}'</span>
+<span class="c1"># the response mentions "Alice"</span>
+</code></pre></div>
+Restart the server (or the container) and ask again: the history must survive the restart. Then send a message with <code>"model": "no-such-model"</code>: you get a 502, and <code>GET /conversation/test01</code> shows no new message.<p></p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the two conversation requests (the model remembers the name), the request after the restart, and the failed request followed by <code>GET /conversation/test01</code> without the failed message, and upload it together with your solution as <code>f4_3.png</code>.</p>
+</div>
+<h3 id="exercise-44-implement-get-conversationsession_id">Exercise 4.4 – Implement <code>GET /conversation/{session_id}</code><a class="headerlink" href="#exercise-44-implement-get-conversationsession_id" title="Permanent link">¶</a></h3>
+<ul>
+<li>Return <code>{"session_id": ..., "messages": [...]}</code> with the full history of the session.</li>
+<li>Respond with <strong>HTTP 404</strong> if the session does not exist.</li>
+</ul>
+<p><strong>Expected outcome:</strong>
+</p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:8000/conversation/test01
+<span class="c1"># {"session_id":"test01","messages":[{"role":"user","content":"My name is Alice."}, ...]}</span>
+
+curl<span class="w"> </span>-i<span class="w"> </span>http://localhost:8000/conversation/does-not-exist
+<span class="c1"># HTTP/1.1 404 Not Found</span>
+</code></pre></div><p></p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the history of <code>test01</code> and the 404 response, and upload it together with your solution as <code>f4_4.png</code>.</p>
+</div>
+<h2 id="part-5-streamlit-chat-ui">Part 5 – Streamlit Chat UI<a class="headerlink" href="#part-5-streamlit-chat-ui" title="Permanent link">¶</a></h2>
+<p>You already know Streamlit from previous labs. Here you build a chat application backed by the <code>/conversation</code> endpoint of Part 4. Remember that Streamlit re-runs the whole script on every interaction, so anything that must survive a rerun belongs in <code>st.session_state</code>.</p>
+<p>Run the Streamlit app with:
+</p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>streamlit<span class="w"> </span>run<span class="w"> </span>app.py
+</code></pre></div><p></p>
+<h3 id="exercise-51-implement-the-chat-interface">Exercise 5.1 – Implement the Chat interface<a class="headerlink" href="#exercise-51-implement-the-chat-interface" title="Permanent link">¶</a></h3>
+<p><code>app.py</code> provides the page setup and the <code>get_models()</code> helper. Implement the rest:</p>
+<p><strong>5.1a — Session state</strong></p>
+<ul>
+<li>Every browser session gets its own conversation id (an 8-character random id, e.g. from <code>uuid4</code>), created once and kept across reruns.</li>
+<li>Keep the list of displayed messages in the session state as well.</li>
+</ul>
+<p><strong>5.1b — Session controls, model selector and history</strong></p>
+<ul>
+<li>Show the current session id, and a <strong>New Session</strong> button that starts a new conversation (new id, empty chat).</li>
+<li>A model selector filled from <code>get_models()</code>, with <code>llama3.2:latest</code> preselected when it is available.</li>
+<li>Display all previous messages of the session with <code>st.chat_message</code>.</li>
+</ul>
+<p><strong>5.1c — New message</strong></p>
+<ul>
+<li>When the user submits a message (<code>st.chat_input</code>), show it immediately.</li>
+<li>Send it to <code>POST /conversation</code> with the session id and the selected model (timeout 120 s), showing a spinner while waiting.</li>
+<li>Display the assistant's reply and, below it, the latency in milliseconds.</li>
+<li>If the request fails for any reason, show a readable error message in the chat instead of crashing the app.</li>
+<li>Store both messages so they are shown again after the next rerun.</li>
+</ul>
+<p><strong>Expected outcome:</strong> a working chat where the model remembers earlier messages of the same session, and <strong>New Session</strong> starts a conversation without memory.</p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the running chat app with at least two turns in which the model demonstrates memory (e.g. you tell it your name, then ask it to recall it), and upload it together with your solution as <code>f5_1a.png</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the chat after clicking <strong>New Session</strong>, showing that the new session does not remember the previous one, and upload it together with your solution as <code>f5_1b.png</code>.</p>
+</div>
+<h2 id="part-6-semantic-caching">Part 6 – Semantic Caching<a class="headerlink" href="#part-6-semantic-caching" title="Permanent link">¶</a></h2>
+<p>LLM inference is expensive, both in cost (API calls) and time (seconds per request). <strong>Semantic caching</strong> avoids redundant calls by detecting that a new prompt is semantically similar to one that was already answered.</p>
+<p>Unlike exact-match caching (which only catches identical strings), semantic caching uses <strong>vector embeddings</strong> to measure similarity of meaning:</p>
+<ol>
+<li>When a prompt arrives, compute its embedding vector with <code>nomic-embed-text</code>.</li>
+<li>Compare it with the cached prompt embeddings using <strong>cosine similarity</strong>.</li>
+<li>If the similarity reaches the threshold (default 0.92), return the cached response immediately: no LLM call.</li>
+<li>Otherwise call the LLM, then store the prompt embedding and the response in the cache.</li>
+</ol>
+<p>A cached answer must only be reused where it is interchangeable. In this lab the cache is split into <strong>namespaces</strong>: one per model <em>and</em> <code>max_tokens</code> value, so an answer generated by one model (or cut off at 10 tokens) is never returned for a request to another model (or with a 512-token limit).</p>
+<p><strong>Cosine similarity</strong> measures the angle between two vectors. Semantically similar sentences point in roughly the same direction in embedding space:
+</p><div class="highlight"><pre><span></span><code>similarity = dot(a, b) / (||a|| × ||b||)
+# 1.0 = same direction, 0.0 = orthogonal, -1.0 = opposite
+</code></pre></div><p></p>
+<p>The cache is kept <strong>in memory</strong> for this lab (a Python list). In production it would be a vector database (e.g. Redis, Qdrant or pgvector).</p>
+<p>Ollama's embedding endpoint:
+</p><div class="highlight"><pre><span></span><code>POST http://localhost:11434/api/embed
+{"model": "nomic-embed-text", "input": "your text here"}
+→ {"embeddings": [[0.123, -0.456, ...]], ...}   # one 768-dimensional vector per input
+</code></pre></div><p></p>
+<h3 id="exercise-61-implement-embedding-generation">Exercise 6.1 – Implement embedding generation<a class="headerlink" href="#exercise-61-implement-embedding-generation" title="Permanent link">¶</a></h3>
+<p>Implement <code>get_embedding(text)</code> in <code>cache.py</code>: return the embedding vector of <code>text</code> computed by <code>EMBED_MODEL</code> through Ollama (async, 30 s timeout; raise an exception on an HTTP error).</p>
+<p><strong>Expected outcome:</strong> <code>get_embedding("hello world")</code> returns a list of 768 floats:
+</p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import asyncio, cache; e = asyncio.run(cache.get_embedding('hello world')); print(len(e), e[:3])"</span>
+</code></pre></div><p></p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the output of the embedding command, and upload it together with your solution as <code>f6_1.png</code>.</p>
+</div>
+<h3 id="exercise-62-implement-cosine-similarity">Exercise 6.2 – Implement cosine similarity<a class="headerlink" href="#exercise-62-implement-cosine-similarity" title="Permanent link">¶</a></h3>
+<p>Implement <code>cosine_similarity(a, b)</code> using only the standard library (no numpy). Return <code>0.0</code> if either vector has zero length.</p>
+<p><strong>Expected outcome:</strong> <code>cosine_similarity([1, 0], [1, 0]) == 1.0</code>, <code>cosine_similarity([1, 0], [0, 1]) == 0.0</code>, <code>cosine_similarity([1, 0], [-1, 0]) == -1.0</code>, <code>cosine_similarity([0, 0], [1, 0]) == 0.0</code>:
+</p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"from cache import cosine_similarity as c; print(c([1, 0], [1, 0]), c([1, 0], [0, 1]), c([1, 0], [-1, 0]), c([0, 0], [1, 0]))"</span>
+</code></pre></div><p></p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the output of the cosine similarity command, and upload it together with your solution as <code>f6_2.png</code>.</p>
+</div>
+<h3 id="exercise-63-implement-model-aware-cache-check-and-store">Exercise 6.3 – Implement model-aware cache check and store<a class="headerlink" href="#exercise-63-implement-model-aware-cache-check-and-store" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>6.3a <code>check_cache(prompt_embedding, namespace, threshold)</code>:</strong> find the most similar cached entry <strong>in the same namespace</strong> and return <code>(hit, cached_response, best_similarity)</code> as described in the docstring.</li>
+<li><strong>6.3b <code>store_in_cache(prompt, namespace, embedding, response)</code>:</strong> append a new entry to <code>_cache</code>.</li>
+</ul>
+<p><strong>Expected outcome:</strong> save the following script as <code>check_cache.py</code> and run it with <code>python check_cache.py</code>. Only the first check is a hit.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">cache</span>
+
+<span class="n">cache</span><span class="o">.</span><span class="n">clear_cache</span><span class="p">()</span>
+<span class="n">cache</span><span class="o">.</span><span class="n">store_in_cache</span><span class="p">(</span><span class="s2">"q1"</span><span class="p">,</span> <span class="s2">"llama3.2:latest|512"</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="s2">"A1"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"same namespace, same vector: "</span><span class="p">,</span> <span class="n">cache</span><span class="o">.</span><span class="n">check_cache</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="s2">"llama3.2:latest|512"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"same namespace, other vector:"</span><span class="p">,</span> <span class="n">cache</span><span class="o">.</span><span class="n">check_cache</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="s2">"llama3.2:latest|512"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"other namespace, same vector:"</span><span class="p">,</span> <span class="n">cache</span><span class="o">.</span><span class="n">check_cache</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="s2">"llama3.2:1b|512"</span><span class="p">))</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the output of <code>check_cache.py</code>, and upload it together with your solution as <code>f6_3.png</code>.</p>
+</div>
+<h3 id="exercise-64-add-semantic-caching-to-post-generate">Exercise 6.4 – Add semantic caching to <code>POST /generate</code><a class="headerlink" href="#exercise-64-add-semantic-caching-to-post-generate" title="Permanent link">¶</a></h3>
+<p>Extend your <code>/generate</code> endpoint from Exercise 1.3:</p>
+<ol>
+<li>Build the namespace from the model and <code>max_tokens</code>. Ollama treats <code>llama3.2</code> and <code>llama3.2:latest</code> as the same model, so normalize the model name first (add <code>:latest</code> when no tag is given). Compute the embedding of the prompt and check the cache.</li>
+<li>On a <strong>hit</strong>, return the cached response immediately with <code>cache_hit=true</code>, <code>token_count=0</code> and the similarity score (rounded to 4 decimals), without calling the LLM.</li>
+<li>On a <strong>miss</strong>, generate as before, store the new response in the cache, and return <code>cache_hit=false</code> together with the best similarity that was found.</li>
+</ol>
+<p><code>latency_ms</code> must include the embedding time in both cases. <code>GET /cache/stats</code> shows the number of cached entries.</p>
+<p>The cache is an optimization, not a requirement: if the embedding call fails (e.g. <code>nomic-embed-text</code> is not installed), log a warning and serve the request <strong>without</strong> the cache instead of failing it.</p>
+<p><strong>Expected outcome:</strong> sending the same prompt twice returns <code>cache_hit: true</code> the second time, with a latency that is an order of magnitude lower. Sending it again with a different <code>model</code> or <code>max_tokens</code> is a miss; <code>"llama3.2"</code> and <code>"llama3.2:latest"</code> share the cache.</p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the cache miss and the cache hit for the same prompt, the misses for another model and another <code>max_tokens</code>, the shared hit for <code>llama3.2:latest</code>, and <code>GET /cache/stats</code>, and upload it together with your solution as <code>f6_4.png</code>.</p>
+</div>
+<h3 id="exercise-65-threshold-experiment">Exercise 6.5 – Threshold experiment<a class="headerlink" href="#exercise-65-threshold-experiment" title="Permanent link">¶</a></h3>
+<p>Restart the server (to empty the cache), then send these prompts to <code>/generate</code> in this order, all with <code>"model": "llama3.2"</code>, and record <code>cache_hit</code> and <code>similarity_score</code> for each:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Prompt</th>
+<th>Expected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>What is the capital of France?</code></td>
+<td>miss (empty cache)</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>What is the capital of France?</code></td>
+<td>hit (identical)</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>Tell me France's capital city</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>Capital of France?</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>What is the capital of Germany?</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>What is the population of France?</code></td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<p>Then repeat the experiment with the thresholds <strong>0.95</strong> and <strong>0.75</strong> by passing the <code>threshold</code> argument to <code>check_cache()</code> in <code>main.py</code>.</p>
+<p><strong>Deliverable</strong> (in <code>answers.md</code>, under <code>## Exercise 6.5</code>): a table with the similarity score and the hit/miss result of every prompt for each threshold, and a short answer:</p>
+<ul>
+<li>Which threshold would you use in production and why?</li>
+<li>Did you find a <strong>false positive</strong> (a cache hit for a prompt that needs a different answer)? What would it cost the user?</li>
+<li>The namespace ignores <code>temperature</code>. When is that acceptable, and when would you add it to the namespace?</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title"><img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" title=":pencil:"> Written answer</p>
+<p>Answer this question in <code>answers.md</code>, under the heading <code>## Exercise 6.5</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the Postman responses of prompts 3–6 at the default threshold, and upload it together with your solution as <code>f6_5a.png</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📷" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4f7.svg" title=":camera:"> Screenshot</p>
+<p>Take a screenshot of the Postman response of a false positive at a lower threshold, and upload it together with your solution as <code>f6_5b.png</code>. This screenshot is only required if you found a false positive.</p>
+</div>
+<h2 id="giving-feedback">Giving feedback<a class="headerlink" href="#giving-feedback" title="Permanent link">¶</a></h2>
+<p>Please share your opinion about this laboratory in <code>answers.md</code>, under the heading <code>## Feedback</code>. You can include:</p>
+<ul>
+<li>Your general impression of the laboratory.</li>
+<li>The things you liked or did not like.</li>
+<li>Whether you found the lab easy or difficult.</li>
+<li>Which exercises you enjoyed the most.</li>
+<li>What was necessary but not included in this laboratory.</li>
+<li>What was unnecessary but included in this laboratory.</li>
+</ul>
   <hr>
   <div class="md-source-file">
     <span class="md-source-file__fact"> <span class="md-icon" title="Last update"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -871,8 +2636,8 @@
           </path>
         </svg>
       </span>
-      <span title="2026. szeptember 18. 13:34:24">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. szeptember 18. 13:34:24 CEST"><span class="timeago" datetime="2026-09-18T13:34:24+02:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. szeptember 18. 13:34:24 CEST">2026-09-18</span>
+      <span title="2026. szeptember 30. 20:52:07">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. szeptember 30. 20:52:07 CEST"><span class="timeago" datetime="2026-09-30T20:52:07+02:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. szeptember 30. 20:52:07 CEST">2026-09-30</span>
       </span>
     </span>
 
