@@ -69,7 +69,6 @@ Don't forget to follow the assignment submission process described under [GitHub
 !!! important "Data"
     The examples and exercises use the following folders, which must be placed next to your notebook or script:
 
-    - `images/` – sample images for the introductory examples (`img_1.png`, `img_2.png`),
     - `invoices/` – 100 scanned invoice images (Exercises 1 and 3),
     - `general_purpose_images/` – 100 general-purpose images (Exercise 2).
 
@@ -100,7 +99,7 @@ from PIL import Image
 
 MODEL_NAME = "Salesforce/blip-image-captioning-base"
 
-image = Image.open("images/img_1.png").convert("RGB")
+image = Image.open("./invoices/batch1-0001.jpg").convert("RGB")
 
 # Loading the processor and the model.
 processor = BlipProcessor.from_pretrained(MODEL_NAME)
@@ -150,7 +149,7 @@ Note the following characteristics of this approach:
 import pytesseract
 from PIL import Image
 
-image = Image.open("./images/img_2.png").convert("RGB")
+image = Image.open("./invoices/batch1-0001.jpg").convert("RGB")
 
 text = pytesseract.image_to_string(image, lang="eng")
 
