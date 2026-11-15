@@ -4,4 +4,367 @@ authors: balazskvancz
 
 # 05 - Multimodal AI pipeline and developer tools
 
-Details will be added shortly.
+## Goal
+
+The main goal of this laboratory is to become familiar with multimodal artificial intelligence pipelines.
+
+By the end of the laboratory, you should be able to:
+
+- understand how multimodal AI pipelines work,
+- process image and text inputs locally,
+- extract text from images using Optical Character Recognition (OCR),
+- run pretrained multimodal models locally or in Google Colab,
+- build simple multimodal applications.
+
+The structure of this laboratory is as follows:
+
+1. Installing the required dependencies.
+1. Getting familiar with the technologies used through various examples.
+1. Invoice Analysis System (OCR + Numeric Extraction) [4 points in total]
+1. Text-based Image Retrieval System [5 points in total]
+1. OCR + Semantic Retrieval [6 points in total]
+1. Giving feedback [+1 point]
+
+!!! info "Grading"
+    In order to pass this laboratory, you must obtain at least 6 points out of 15.
+
+!!! important "Screenshot requirement"
+    At the end of **every** exercise (marked with a :camera: **Screenshot** note), you must take a screenshot of your working solution, including its output, and upload it together with your solution, using the exact filename given in that note (e.g. `f1.png`). Solutions missing the required screenshots, or using the wrong filename, will not be accepted.
+
+## Preparation
+
+Don't forget to follow the assignment submission process described under [GitHub](../../information/github.md) while working on this laboratory.
+
+!!! important "Reviewer"
+    When creating the pull request for this laboratory, assign it to the `balazskvancz` GitHub user.
+
+!!! tip "Jupyter notebook or plain Python files"
+    You may solve the exercises either in a Jupyter notebook or in plain `.py` files, whichever you prefer. Regardless of the format you choose, make sure that **everything** (code and the required screenshots) is committed and pushed to your solution branch.
+
+## Setup
+
+!!! important "Mandatory"
+    Install the [Tesseract](https://github.com/tesseract-ocr/tesseract) OCR engine. On Google Colab or Debian/Ubuntu, run:
+
+    ```bash
+    apt-get update
+    apt-get install -y tesseract-ocr
+    ```
+
+    On macOS, use `brew install tesseract`; on Windows, use the installer linked from the [Tesseract documentation](https://tesseract-ocr.github.io/tessdoc/Installation.html).
+
+    Then install the required Python libraries:
+
+    ```bash
+    pip install transformers accelerate torch pillow sentencepiece pytesseract sentence-transformers
+    ```
+
+!!! tip "Optional"
+    Install `jupyter` if you are working on your own machine.
+
+    ```bash
+    pip install jupyter
+    ```
+
+!!! important "Data"
+    The examples and exercises use the following folders, which must be placed next to your notebook or script:
+
+    - `images/` – sample images for the introductory examples (`img_1.png`, `img_2.png`),
+    - `invoices/` – 100 scanned invoice images (Exercises 1 and 3),
+    - `general_purpose_images/` – 100 general-purpose images (Exercise 2).
+
+## Example: Image Captioning with BLIP
+
+In this example, we build a simple multimodal image captioning system using the open-source **BLIP** (Bootstrapping Language-Image Pre-training) model.
+
+The goal of this example is to understand how a vision-language model can process an image and generate a natural language description of it without relying on any external API.
+
+The workflow of the example is as follows:
+
+- an image is loaded into memory,
+- the BLIP processor converts the image into the tensor format expected by the model (resizing and normalisation),
+- the BLIP model generates a sequence of tokens, which is decoded into a textual caption describing the visual content.
+
+The system performs an image-to-text generation task, which is one of the most common applications of multimodal AI systems. The output of the system is a short textual description of the loaded image.
+
+You will observe:
+
+- how pretrained multimodal models work,
+- how image preprocessing is performed,
+- how captions are generated from visual inputs.
+
+```python
+from transformers import BlipProcessor
+from transformers import BlipForConditionalGeneration
+from PIL import Image
+
+MODEL_NAME = "Salesforce/blip-image-captioning-base"
+
+image = Image.open("images/img_1.png").convert("RGB")
+
+# Loading the processor and the model.
+processor = BlipProcessor.from_pretrained(MODEL_NAME)
+model = BlipForConditionalGeneration.from_pretrained(MODEL_NAME)
+
+# The processor converts the image into model inputs (pixel values).
+inputs = processor(images=image, return_tensors="pt")
+
+# The model generates the caption as a sequence of token IDs.
+output = model.generate(**inputs)
+
+# The token IDs are decoded back into text.
+caption = processor.decode(
+    output[0],
+    skip_special_tokens=True
+)
+
+display(image)
+print(f"The caption generated by the model: {caption}")
+```
+
+## Example: Classical OCR with Tesseract
+
+In this example, we implement a traditional Optical Character Recognition (OCR) pipeline using the open-source Tesseract engine via the `pytesseract` Python wrapper.
+
+Tesseract is a dedicated OCR engine: it detects text regions in the image and recognises the characters line by line (since version 4, using an LSTM-based neural network). Unlike modern multimodal vision-language models, however, it does not interpret the content of the image, it only transcribes the text it finds.
+
+The goal of this example is to extract all readable text from an input image (for example, a scanned document, an invoice, or a screenshot). The system runs entirely locally and does not require any external API or large multimodal model.
+
+The workflow of the example is as follows:
+
+- an image is loaded using the Python Imaging Library (PIL),
+- the image is converted to RGB format,
+- the Tesseract OCR engine detects and extracts the textual content,
+- the extracted text is printed as raw output.
+
+The output of this system is a plain text string containing all recognised characters from the image.
+
+Note the following characteristics of this approach:
+
+- It does not understand the semantic meaning of the image; it only performs character recognition.
+- It is sensitive to image quality, noise, and distortions (e.g. skew or low resolution).
+- It does not provide structured output or reasoning capabilities.
+- It is significantly faster and lighter than large vision-language models.
+
+```python
+import pytesseract
+from PIL import Image
+
+image = Image.open("./images/img_2.png").convert("RGB")
+
+text = pytesseract.image_to_string(image, lang="eng")
+
+print(f"Text recognised in the image: {text}")
+```
+
+## Example: Sentence Embeddings and Similarity
+
+The previous laboratories have already introduced various approaches to creating vector embeddings. In this laboratory, another library, [`sentence-transformers`](https://pypi.org/project/sentence-transformers/), is used. The following code snippet serves as a brief walkthrough.
+
+A `SentenceTransformer` model transforms input text into a dense, fixed-size vector embedding (384 dimensions in the case of `all-MiniLM-L6-v2`). Once we have these embeddings, we can compare them using cosine similarity.
+
+The `util.cos_sim` function returns the cosine similarity of two embeddings, a value between -1 and 1, where higher values indicate stronger semantic similarity.
+
+This approach is widely used in modern NLP systems for tasks such as semantic search, clustering, and retrieval-based question answering.
+
+```python
+from sentence_transformers import SentenceTransformer, util
+
+model = SentenceTransformer("all-MiniLM-L6-v2")
+
+text1 = "hello world"
+text2 = "goodbye world"
+text3 = "hi world"
+
+emb1 = model.encode(text1, convert_to_tensor=True)
+emb2 = model.encode(text2, convert_to_tensor=True)
+emb3 = model.encode(text3, convert_to_tensor=True)
+
+scores = [
+    util.cos_sim(emb1, emb2),
+    util.cos_sim(emb1, emb3)
+]
+
+print(scores)
+```
+
+## Exercise 1 – Invoice Analysis System (OCR + Numeric Extraction)
+
+You are given a folder containing 100 scanned invoice images. Each invoice contains a total amount.
+
+Your task is to implement the `exercise_one` function, which:
+
+- extracts the text from each invoice using OCR,
+- identifies the total amount on each invoice,
+- compares all extracted values,
+- returns:
+    - the sum of all invoice totals,
+    - the highest total,
+    - the lowest total.
+
+The system must run fully locally, without external APIs.
+
+```python
+import os
+import re
+import pytesseract
+from PIL import Image
+
+def exercise_one(folder: str):
+  for file in os.listdir(folder):
+    # TODO: determine the total amount of this invoice.
+    #
+    # There are various approaches to do this.
+    # The simplest one is to use regular expressions.
+    # To do this, first examine at least one invoice
+    # from the `invoices` folder, then run OCR on it
+    # and inspect the recognised text.
+    pass
+
+  return {
+    "min_value": None,
+    "max_value": None,
+    "sum": None
+    }
+```
+
+```python
+exercise_one("invoices")
+```
+
+!!! note ":camera: Screenshot"
+    Take a screenshot of the returned minimum, maximum and sum values, and upload it together with your solution as `f1.png`.
+
+## Exercise 2 – Text-based Image Retrieval System
+
+You are given a folder containing 100 images.
+
+The user provides a natural language description (e.g. “a red car in front of a house”).
+
+Your task is to implement the `exercise_two` function, which:
+
+- computes an embedding for each image,
+- computes the similarity between the user's description and each image,
+- returns the top `k` most relevant images.
+
+The system must run fully locally, without external APIs.
+
+One possible approach would be caption-based retrieval, where the images are first converted into text descriptions using a captioning model, and the query is compared to these captions. In this exercise, a CLIP-based embedding method is used instead. CLIP (Contrastive Language-Image Pre-training) maps images and text into a shared embedding space, so a text query can be compared to the images directly, without generating intermediate captions, which is both faster and avoids losing visual details that a caption would not mention.
+
+The [model card of `clip-ViT-B-32`](https://huggingface.co/sentence-transformers/clip-ViT-B-32) contains code snippets (intentionally not included in this lab) that cover everything you need for this exercise.
+
+```python
+from sentence_transformers import SentenceTransformer, util
+import os
+
+MODEL_NAME = "clip-ViT-B-32"
+
+def load_images(folder: str):
+  images = None
+  paths = None
+
+  return images, paths
+
+def exercise_two(folder: str, query: str, k: int) -> list[str]:
+  model = SentenceTransformer(MODEL_NAME)
+  # TODO:
+  # - create a vector embedding for each loaded image,
+  # - create the vector embedding of the query
+  #     in the same embedding space,
+  # - calculate the cosine similarity between the
+  #     query embedding and the image embeddings,
+  # - return the paths of the top `k` images based on similarity.
+  return None
+```
+
+```python
+from PIL import Image
+
+results = exercise_two(
+    folder="./general_purpose_images",
+    query="playing sports",
+    k=5,
+)
+
+for img_path in results:
+  display(Image.open(img_path))
+```
+
+!!! note ":camera: Screenshot"
+    Take a screenshot of the top `k` images returned for the query, and upload it together with your solution as `f2.png`.
+
+## Exercise 3 – OCR + Semantic Retrieval
+
+You are given an image of a scanned document (in this case, an invoice). The document contains structured or semi-structured textual information.
+
+Implement the `exercise_three` function, which:
+
+- extracts the text from the document image using OCR,
+- splits the extracted text into meaningful chunks (e.g. lines or groups of words) – finding an appropriate chunking strategy is left to you to experiment with,
+- encodes both the questions and the text chunks using a sentence embedding model,
+- computes the semantic similarity between each question and each text chunk,
+- returns, for each question, the most relevant text chunk as the answer, along with its similarity score.
+
+The system must run fully locally, without external APIs.
+
+```python
+import os
+import pytesseract
+from PIL import Image
+from sentence_transformers import SentenceTransformer, util
+from typing import TypedDict
+
+MODEL_NAME = "all-MiniLM-L6-v2"
+
+def extract_text(image_path: str) -> str:
+  # TODO: extract the text from the image using OCR.
+  return None
+
+def chunk_text(text: str) -> list[str]:
+  # TODO: split the extracted text into chunks.
+  return None
+
+class QAResult(TypedDict):
+  question: str
+  answer: str
+  score: float
+
+def exercise_three(path: str, questions: list[str]) -> list[QAResult]:
+  model = SentenceTransformer(MODEL_NAME)
+
+  results: list[QAResult] = []
+
+  # TODO: find the best matching answer for each question.
+  # Do not forget to include the question, the answer
+  # and the score as well.
+
+  return results
+```
+
+```python
+exercise_three_results = exercise_three(
+    path="invoices/batch1-0001.jpg",
+    questions=[
+        "What is the invoice number?",
+        "What is the tax ID of the company?",
+        "How much RAM does the computer with the AMD chip have?"
+    ]
+)
+
+for res in exercise_three_results:
+  print(res)
+```
+
+!!! note ":camera: Screenshot"
+    Take a screenshot of the questions with their answers and similarity scores, and upload it together with your solution as `f3.png`.
+
+## Giving feedback
+
+Please share your opinion about this laboratory. You can include:
+
+- Your general impression of the laboratory.
+- The things you liked or did not like.
+- Whether you found the lab easy or difficult.
+- Which exercises you enjoyed the most.
+- What was necessary but not included in this laboratory.
+- What was unnecessary but included in this laboratory.
